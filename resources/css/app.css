@@ -10,6 +10,7 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
+
 footer a {
   color: #d1d5db !important; 
   text-decoration: none !important;
@@ -34,3 +35,9 @@ footer a:hover {
 .sos-animate {
   animation: pulse-sos 1.5s infinite;
 }
+
+a.no-underline, 
+a[class*="no-underline"] {
+    text-decoration: none !important;
+}
+
