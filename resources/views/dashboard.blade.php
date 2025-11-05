@@ -1,4 +1,31 @@
-<!DOCTYPE html>
+@extends('layouts.layoutunregis')
+@section('content')
+    <main class="h-screen-max py-14 px-6 md:px-20 relative ">
+        <div class="flex flex-column items-center">
+
+            <!-- Bagian kiri: teks -->
+            <div class="text-center w-80">
+                <h2>
+                    Keamanan Lingkungan Adalah Tanggung Jawab Bersama
+                </h2>
+                <p class="mt-10! w-full">
+                    Dengan satu klik, anda dapat melaporkan kejadian darurat untuk menciptakan lingkungan yang lebih aman
+                    dan nyaman
+                </p>
+                <a class="inline-block mt-4 bg-yellow-400 px-5 py-3 w-full rounded-2xl no-underline! text-white font-bold 
+                 transition duration-200 ease-in-out hover:scale-102 hover:bg-yellow-700"
+                    href="{{ Route('register') }}">Buat Laporan!</a>
+            </div>
+
+            <img class="mt-5" src="{{ asset('img/report.gif') }}" alt="ilustrasi">
+
+        </div>
+    </main>
+@endsection
+
+
+
+{{-- <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -37,35 +64,9 @@
   </header>
 
   <!-- KONTEN UTAMA -->
-  <main class="flex-1 py-14 px-6 md:px-20">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-
-      <!-- Bagian kiri: teks -->
-      <div class="space-y-5">
-        <h2 class="text-3xl md:text-4xl font-bold leading-snug">
-          Keamanan lingkungan adalah tanggung jawab bersama
-        </h2>
-        <p class="text-gray-600 leading-relaxed">
-          Dengan satu klik, Anda dapat melaporkan kebakaran, pencurian, atau kejadian mencurigakan, 
-          dan membantu menciptakan lingkungan yang lebih aman dan tangguh.
-        </p>
-        <a href="{{ route('register') }}" 
-           class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-6 py-3 rounded-full transition">
-          Get Started Now
-        </a>
-      </div>
-
-      <!-- Bagian kanan: ilustrasi -->
-      <div class="flex justify-center">
-        <div class="w-72 h-60 bg-gray-200 rounded-xl flex items-center justify-center shadow-inner">
-          <span class="text-gray-400">[Gambar Ilustrasi]</span>
-        </div>
-      </div>
-    </div>
-  </main>
-
+  
   <!-- FOOTER -->
     @include('layouts.footer')
     
 </body>
-</html>
+</html> --}}
