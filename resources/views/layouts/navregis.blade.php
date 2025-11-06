@@ -1,5 +1,6 @@
-<nav class="flex p-4 items-center justify-between bg-yellow-500">
-    <div class="font-bold text-xl text-white">
+<nav class="flex p-4 items-center justify-between bg-yellow-500 sticky">
+    <div class="font-bold text-xl text-white flex items-center">
+        <img src="{{ asset('img/whitelogonotext.png') }}" alt="logo" width="40">
         <span>SiagaRT</span>
     </div>
     <li class="flex items-center">

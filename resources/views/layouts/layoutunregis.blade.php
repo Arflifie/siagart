@@ -23,7 +23,10 @@
 </head>
 
 <body>
+
     @include('layouts.navunregis')
+
+
 
     <div class: container>
         @yield(section: 'content')
