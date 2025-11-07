@@ -25,10 +25,17 @@
         {{-- section 2 --}}
         <section class="min-h-[85vh] text-center">
             <h1 class="text-xl md:text-3xl font-bold text-gray-600">Apa Fungsi Kami?</h1>
-            <section class="shadow-lg w-auto p-2 mx-auto h-auto mt-10">
-                <div class="w-auto p-6">tempat pelaporan</div>
-                <div class="w-auto p-6">kirim notifikasi ke staf RT</div>
-                <div class="w-auto p-6">Informasi Cepat</div>
+            <section
+                class="shadow-xl w-auto p-2 mx-auto h-100 mt-10 md:flex md:space-x-20 md:justify-center md:items-center">
+                <div
+                    class="w-auto p-6 py-20 px-20 bg-yellow-800 rounded-xl text-white font-bold hover:shadow-lg hover:scale-105 transition duration-150 ease-in-out">
+                    tempat pelaporan</div>
+                <div
+                    class="w-auto p-6 py-20 px-20 bg-yellow-800 rounded-xl text-white font-bold hover:shadow-lg hover:scale-105 transition duration-150 ease-in-out">
+                    kirim notifikasi ke staf RT</div>
+                <div
+                    class="w-auto p-6 py-20 px-20 bg-yellow-800 rounded-xl text-white font-bold hover:shadow-lg hover:scale-105 transition duration-150 ease-in-out">
+                    Informasi Cepat</div>
             </section>
         </section>
     </main>
