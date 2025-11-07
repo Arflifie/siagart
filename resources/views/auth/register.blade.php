@@ -39,7 +39,7 @@
             </div>
             <div class="mt-15 text-center">
                 <button type="submit" 
-                class="bg-green-600 w-40 py-2 rounded-2xl! no-underline! text-lg font-bold text-white transition duration-300 ease-in-out hover:bg-green-700 hover:scale-110"
+                class="bg-green-600 w-40 py-2 rounded-2xl no-underline text-lg font-bold text-white transition duration-300 ease-in-out hover:bg-green-700 hover:scale-110"
                 >Daftar</button>
                 @error('email')
                 <small class="text-red-600 bg-white px-4 rounded">{{$message}}</small>

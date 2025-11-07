@@ -18,13 +18,15 @@
     {{-- favicon --}}
     <link rel="icon" href="{{ asset('img/logonotext.png') }}" type="image/png">
 
+    {{-- icon google --}}
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
 </head>
 
-<body class="flex flex-col">
+<body class=""">
 
     @include('layouts.navregis')
-
-
 
     <div class="grow">
         @yield(section: 'content')
