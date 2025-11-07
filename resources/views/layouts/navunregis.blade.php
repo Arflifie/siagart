@@ -1,4 +1,4 @@
-<nav class="flex p-4 items-center justify-between bg-yellow-500 sticky top-0 z-50 flex-wrap">
+<nav class="flex p-4 items-center justify-between bg-yellow-500 sticky top-0 z-50 flex-wrap shadow-lg">
     <div class="font-bold text-xl text-white flex items-center">
         <img src="{{ asset('img/whitelogonotext.png') }}" alt="logo" width="40">
         <span class="ml-1">SiagaRT</span>
@@ -9,10 +9,9 @@
             <a href="{{ route('login') }}" class="text-white font-bold no-underline text-lg hover:text-gray-500">Login</a>
             <a href="{{ route('register') }}" class="text-white font-bold no-underline text-lg hover:text-gray-500">Register</a>
         </div>
-
     </div>
 
-    <button id="menu-button" class="text-white md:hidden focus:outline-none">
+    <button id="menu-button" class="text-white md:hidden focus:outline-none cursor-pointer">
         <i id="menu-icon" class="fa-solid fa-bars fa-2xl"></i>
     </button>
 

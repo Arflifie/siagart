@@ -1,109 +1,64 @@
 @extends('layouts.layout')
 @section('content')
-    <div class="flex flex-col items-center w-full overflow-x-hidden relative">
+    <main class="max-w-7xl mx-auto px-6">
 
-        <main class="flex-1 w-full max-w-7xl px-4 py-10 flex flex-col items-center">
-            {{-- header --}}
-            <section class="h-screen-xl md:w-100">
-                <div class="flex flex-col text-center">
-                    <h1 class="text-2xl font-bold ">Halo, <span class="text-yellow-500">{{ Auth::user()->name }}</span>
-                    </h1>
-                    <p class="text-lg mt-20"><span class="text-yellow-500">Ada kejadian darurat?</span> Jangan ragu, segera
-                        laporkan agar kami bisa membantu lebih cepat. </p>
-                </div>
+        {{-- section 1 --}}
+        <section class="min-h-[80vh] mt-10 md:grid md:grid-cols-2 md:items-center md:text-left md:gap-16 text-center">
+            <section>
+                <h1 class="text-2xl md:text-3xl lg:text-5xl font-bold text-gray-600">
+                    Halo, <span class="text-yellow-500">{{ Auth::user()->name }}</span>
+                </h1>
+                <p class="text-lg md:text-xl lg:text-2xl text-gray-600 mt-8 md:mt-10">
+                    <span class="text-yellow-600">Ada kejadian darurat?</span> Jangan ragu, segera
+                    laporkan agar kami bisa membantu lebih cepat.
+                </p>
+                <a href="{{ Route('pelaporan') }}"
+                    class="block mt-10 bg-yellow-500 mx-auto md:mx-0 w-64 py-4 rounded-xl text-white font-bold
+                     hover:bg-yellow-700 hover:scale-105 hover:shadow-lg transition duration-200 ease-in-out text-center md:text-lg">
+                    Laporkan Sekarang!
+                </a>
             </section>
+            <div class="mt-10 md:mt-0 flex justify-center md:justify-end">
+                <img src="{{ asset('img/Visual data.gif') }}" alt="visual data"
+                    class="w-64 md:w-80 lg:w-[400px] h-auto object-contain">
+            </div>
+        </section>
 
-            <a href="{{ Route('pelaporan') }}"
-                class="block text-white font-bold mt-35 w-70 py-4 bg-yellow-500 text-center rounded-xl hover:scale-101 hover:bg-yellow-700 hover:shadow-2xl transition duration-150 ease-in-out">Laporkan
-                Sekarang!</a>
+        {{-- section 2 --}}
+        <section class="min-h-[80vh] text-center md:text-left mt-10 px-4">
+            <h1 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600 mb-8">Nomor Darurat</h1>
 
-            <img src="{{ asset('img/Visual data.gif') }}" alt="visual data" width="400" class="mt-25">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 place-items-center">
+                <a href="tel:113"
+                    class="flex flex-col md:flex-row items-center shadow-lg p-6 w-full max-w-md text-gray-600 font-bold rounded-xl hover:shadow-2xl transition">
+                    <img src="{{ asset('img/firefighter.svg') }}" alt="damkar" class="w-32 h-auto mx-auto md:mx-0">
+                    <span class="text-xl mt-4 md:mt-0 md:ml-6">Damkar</span>
+                </a>
 
-            {{-- kontak --}}
-            <section class="w-full h-screen px-2 py-10 mb-8">
-                <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-4">Kontak Darurat</h3>
+                <a href="tel:110"
+                    class="flex flex-col md:flex-row items-center shadow-lg p-6 w-full max-w-md text-gray-600 font-bold rounded-xl hover:shadow-2xl transition">
+                    <img src="{{ asset('img/Police.svg') }}" alt="polisi" class="w-32 h-auto mx-auto md:mx-0">
+                    <span class="text-xl mt-4 md:mt-0 md:ml-6">Polisi</span>
+                </a>
 
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <a href="tel:118"
+                    class="flex flex-col md:flex-row items-center shadow-lg p-6 w-full max-w-md text-gray-600 font-bold rounded-xl hover:shadow-2xl transition">
+                    <img src="{{ asset('img/ambulance.svg') }}" alt="ambulance" class="w-32 h-auto mx-auto md:mx-0">
+                    <span class="text-xl mt-4 md:mt-0 md:ml-6">Ambulans</span>
+                </a>
 
-                    <a href="tel:110"
-                        class="bg-white shadow rounded-2xl p-5 flex flex-col items-center text-center hover:shadow-amber-600 transition hover:scale-105 no-underline">
-                        <div class="bg-amber-400 w-14 h-14 rounded-xl mb-3 flex items-center justify-center">
-                            @if (file_exists(public_path('icons/polisi.svg')))
-                                {!! file_get_contents(public_path('icons/polisi.svg')) !!}
-                            @endif
-                        </div>
-                        <p class="text-base md:text-lg font-bold text-gray-800">Polisi</p>
-                        <p class="text-sm md:text-base font-semibold text-red-700/80">No: 110</p>
-                    </a>
+                <a href="tel:115"
+                    class="flex flex-col md:flex-row items-center shadow-lg p-6 w-full max-w-md text-gray-600 font-bold rounded-xl hover:shadow-2xl transition">
+                    <img src="{{ asset('img/sar.svg') }}" alt="basarnas" class="w-32 h-auto mx-auto md:mx-0">
+                    <span class="text-xl mt-4 md:mt-0 md:ml-6">Basarnas</span>
+                </a>
+            </div>
+        </section>
 
-                    <a href="tel:113"
-                        class="bg-white shadow rounded-2xl p-5 flex flex-col items-center text-center hover:shadow-amber-600 transition hover:scale-105 no-underline">
-                        <div class="bg-amber-400 w-14 h-14 rounded-xl mb-3 flex items-center justify-center">
-                            @if (file_exists(public_path('icons/damkar.svg')))
-                                {!! file_get_contents(public_path('icons/damkar.svg')) !!}
-                            @endif
-                        </div>
-                        <p class="text-base md:text-lg font-bold text-gray-800">Damkar</p>
-                        <p class="text-sm md:text-base font-semibold text-red-700/80">No: 113</p>
-                    </a>
 
-                    <a href="tel:119"
-                        class="bg-white shadow rounded-2xl p-5 flex flex-col items-center text-center hover:shadow-amber-600 transition hover:scale-105 no-underline">
-                        <div class="bg-amber-400 w-14 h-14 rounded-xl mb-3 flex items-center justify-center">
-                            @if (file_exists(public_path('icons/ambulans.svg')))
-                                {!! file_get_contents(public_path('icons/ambulans.svg')) !!}
-                            @endif
-                        </div>
-                        <p class="text-base md:text-lg font-bold text-gray-800">Ambulans</p>
-                        <p class="text-sm md:text-base font-semibold text-red-700/80">No: 119</p>
-                    </a>
-
-                    <div
-                        class="bg-white shadow rounded-2xl p-5 flex flex-col items-center text-center hover:shadow-amber-600 transition hover:scale-105">
-                        <div class="bg-amber-400 w-14 h-14 rounded-xl mb-3 flex items-center justify-center">
-                            @if (file_exists(public_path('icons/rt.svg')))
-                                {!! file_get_contents(public_path('icons/rt.svg')) !!}
-                            @endif
-                        </div>
-                        <p class="text-base md:text-lg font-bold text-gray-800">Petugas RT</p>
-                        <p class="text-sm md:text-base font-semibold text-red-700/80">No: +62XXXXXX</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="w-full px-2 py-10 mb-16">
-                <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-2">Histori Laporan</h3>
-                <p class="text-gray-500 text-sm md:text-base mb-4">Riwayat laporan terakhir kamu</p>
-
-                <div class="space-y-4">
-                    <div
-                        class="bg-white shadow rounded-2xl p-5 flex justify-between items-center hover:shadow-lg transition">
-                        <div>
-                            <p class="text-base md:text-lg font-bold text-gray-800">Kebakaran</p>
-                            <p class="text-sm md:text-base font-semibold text-amber-400">Tanggal: 12 Okt 2025</p>
-                        </div>
-                        <span
-                            class="bg-yellow-400 text-white text-[12px] md:text-sm font-semibold rounded-full px-4 py-1">Proses</span>
-                    </div>
-
-                    <div
-                        class="bg-white shadow rounded-2xl p-5 flex justify-between items-center hover:shadow-lg transition">
-                        <div>
-                            <p class="text-base md:text-lg font-bold text-gray-800">Pencurian</p>
-                            <p class="text-sm md:text-base font-semibold text-amber-400">Tanggal: 10 Okt 2025</p>
-                        </div>
-                        <span
-                            class="bg-green-500 text-white text-[12px] md:text-sm font-semibold rounded-full px-4 py-1">Selesai</span>
-                    </div>
-                </div>
-
-                <div class="text-center mt-6">
-                    <button
-                        class="text-neutral-600 text-sm md:text-base font-bold underline hover:text-amber-500 transition">
-                        Lihat Selengkapnya >
-                    </button>
-                </div>
-            </section>
-        </main>
-    </div>
+        {{-- section 3 --}}
+        <section class="min-h-[80vh] text-center md:text-left mt-10">
+            <h1></h1>
+        </section>
+    </main>
 @endsection

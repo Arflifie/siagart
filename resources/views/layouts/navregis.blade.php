@@ -1,4 +1,4 @@
-<nav class="flex p-4 items-center justify-between bg-yellow-500 sticky top-0 z-50 flex-wrap w-full">
+<nav class="flex p-4 items-center justify-between bg-yellow-500 sticky top-0 z-50 flex-wrap w-full shadow-lg">
     <div class="font-bold text-xl text-white flex items-center">
         <img src="{{ asset('img/whitelogonotext.png') }}" alt="logo" width="40">
         <span class="ml-1">SiagaRT</span>

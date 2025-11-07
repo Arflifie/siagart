@@ -1,26 +1,25 @@
 @extends('layouts.layoutunregis')
 @section('content')
-    <main class="min-h-screen py-14 px-6 md:px-20 flex items-center">
+    <main class="max-w-7xl mx-auto px-6">
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-4 container">
-
-            <div class="w-80 md:w-120 mx-auto">
-                <h2 class="text-center md:text-left! font-bold!">
-                    Keamanan Lingkungan Adalah Tanggung Jawab Bersama
+        <section class="min-h-[85vh] mt-10 md:grid md:grid-cols-2 md:items-center md:text-left md:gap-16 text-center">
+            <section>
+                <h2 class="text-2xl md:text-3xl lg:text-5xl font-bold text-gray-600">
+                    <span class="text-yellow-500">Keamanan Lingkungan</span> Adalah Tanggung Jawab Bersama
                 </h2>
-                <p class="mt-10! w-full text-center md:text-left!">
+                <p class="text-lg md:text-xl lg:text-2xl text-gray-600 mt-8 md:mt-10">
                     Dengan satu klik, anda dapat melaporkan kejadian darurat untuk menciptakan lingkungan yang lebih aman
                     dan nyaman
                 </p>
-                <a class="inline-block mt-4 bg-yellow-400 px-5 py-3 w-full rounded-2xl no-underline! text-white font-bold 
-                 transition duration-200 ease-in-out hover:scale-102 hover:bg-yellow-700 text-center"
+                <a class="block mt-10 bg-yellow-500 mx-auto md:mx-0 w-64 py-4 rounded-xl text-white font-bold
+                     hover:bg-yellow-700 hover:scale-105 hover:shadow-lg transition duration-200 ease-in-out text-center md:text-lg"
                     href="{{ Route('register') }}">Buat Laporan!</a>
+            </section>
+            <div class="mt-10 md:mt-0 flex justify-center md:justify-end">
+                <img class="mt-5" src="{{ asset('img/report.gif') }}" alt="ilustrasi"
+                    class="w-64 md:w-80 lg:w-[400px] h-auto object-contain">
             </div>
-
-            <div class="flex justify-center">
-                <img class="mt-5" src="{{ asset('img/report.gif') }}" alt="ilustrasi">
-            </div>
-        </div>
+        </section>
     </main>
 @endsection
 
