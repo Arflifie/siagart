@@ -1,24 +1,25 @@
 @extends('layouts.layoutunregis')
 @section('content')
-    <main class="h-screen-max py-14 px-6 md:px-20 relative ">
-        <div class="flex flex-column items-center">
+    <main class="min-h-screen py-14 px-6 md:px-20 flex items-center">
 
-            <!-- Bagian kiri: teks -->
-            <div class="text-center w-80">
-                <h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-4 container">
+
+            <div class="w-80 md:w-120 mx-auto">
+                <h2 class="text-center md:text-left! font-bold!">
                     Keamanan Lingkungan Adalah Tanggung Jawab Bersama
                 </h2>
-                <p class="mt-10! w-full">
+                <p class="mt-10! w-full text-center md:text-left!">
                     Dengan satu klik, anda dapat melaporkan kejadian darurat untuk menciptakan lingkungan yang lebih aman
                     dan nyaman
                 </p>
                 <a class="inline-block mt-4 bg-yellow-400 px-5 py-3 w-full rounded-2xl no-underline! text-white font-bold 
-                 transition duration-200 ease-in-out hover:scale-102 hover:bg-yellow-700"
+                 transition duration-200 ease-in-out hover:scale-102 hover:bg-yellow-700 text-center"
                     href="{{ Route('register') }}">Buat Laporan!</a>
             </div>
 
-            <img class="mt-5" src="{{ asset('img/report.gif') }}" alt="ilustrasi">
-
+            <div class="flex justify-center">
+                <img class="mt-5" src="{{ asset('img/report.gif') }}" alt="ilustrasi">
+            </div>
         </div>
     </main>
 @endsection

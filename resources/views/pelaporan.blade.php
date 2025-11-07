@@ -89,7 +89,7 @@
                 <!-- Tombol Kirim -->
                 <div class="flex justify-center">
                     <button type="submit"
-                        class="bg-blue-500 text-white font-semibold py-2 px-16 rounded-2xl hover:bg-blue-600 transition shadow-md">
+                        class="bg-blue-500 text-white font-semibold py-2 px-16 rounded-2xl! hover:bg-blue-600 transition shadow-md">
                         Kirim
                     </button>
                 </div>

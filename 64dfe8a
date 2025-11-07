@@ -1,0 +1,52 @@
+[33mb1245b4[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: commit (merge): merge
+[33m8fcffc7[m HEAD@{1}: commit: update optional
+[33m64dfe8a[m HEAD@{2}: commit: perbaikan di dashboard
+[33md5020db[m HEAD@{3}: pull: Fast-forward
+[33mccaa19c[m HEAD@{4}: commit (merge): penyesuaian halaman pelaporan dan dashboard
+[33ma48f470[m HEAD@{5}: pull: Fast-forward
+[33m6a8a2c9[m HEAD@{6}: checkout: moving from testarfun to main
+[33m8a7e52f[m[33m ([m[1;31morigin/testarfun[m[33m, [m[1;32mtestarfun[m[33m)[m HEAD@{7}: commit: nothing
+[33m59d7054[m HEAD@{8}: commit: nambahin favicon
+[33mbec2e85[m HEAD@{9}: commit: update tampilan home
+[33m4270670[m HEAD@{10}: pull origin main: Merge made by the 'ort' strategy.
+[33m75ccff0[m HEAD@{11}: commit: update tampilan home
+[33m06137d0[m HEAD@{12}: commit: update tampilan home
+[33m6afc238[m HEAD@{13}: pull origin main: Merge made by the 'ort' strategy.
+[33mf331b65[m HEAD@{14}: checkout: moving from main to testarfun
+[33m6a8a2c9[m HEAD@{15}: pull origin main: Merge made by the 'ort' strategy.
+[33mf331b65[m HEAD@{16}: reset: moving to HEAD
+[33mf331b65[m HEAD@{17}: pull origin main: updating HEAD
+[33mf331b65[m HEAD@{18}: pull: updating HEAD
+[33mf331b65[m HEAD@{19}: checkout: moving from testarfun to main
+[33mf331b65[m HEAD@{20}: pull origin main: updating HEAD
+[33mf331b65[m HEAD@{21}: checkout: moving from main to testarfun
+[33mf331b65[m HEAD@{22}: pull origin main: updating HEAD
+[33mf331b65[m HEAD@{23}: pull origin main: updating HEAD
+[33mf331b65[m HEAD@{24}: pull: updating HEAD
+[33mf331b65[m HEAD@{25}: checkout: moving from testarfun to main
+[33mf331b65[m HEAD@{26}: checkout: moving from main to testarfun
+[33mf331b65[m HEAD@{27}: pull origin testarfun: Fast-forward
+[33mafec4a7[m HEAD@{28}: checkout: moving from testarfun to main
+[33mf331b65[m HEAD@{29}: commit: update auth
+[33m2e77490[m HEAD@{30}: commit: update auth
+[33mb45cf0f[m HEAD@{31}: commit: about
+[33mafec4a7[m HEAD@{32}: checkout: moving from main to testarfun
+[33mafec4a7[m HEAD@{33}: commit: update terbaru navbar
+[33mdace33d[m HEAD@{34}: commit: update navbar regis
+[33m8cabdea[m HEAD@{35}: commit: nambah konfigurasi tabel user
+[33mddf498c[m HEAD@{36}: commit: register clear
+[33me64c7f5[m HEAD@{37}: commit: progress buat auth register
+[33mad78997[m HEAD@{38}: commit: nambah beberapa folder admin, home, pelaporan/form, dll
+[33ma54ae78[m HEAD@{39}: commit: auth login clear
+[33m9f02a60[m HEAD@{40}: commit: auth login tinggal pesan error
+[33m1212b8a[m HEAD@{41}: commit: progress auth login
+[33m4957174[m HEAD@{42}: commit: update halaman login dan register
+[33me6174b9[m HEAD@{43}: commit: tampilan login udh oke tinggal logic auth
+[33md330445[m HEAD@{44}: pull: Fast-forward
+[33ma790bf0[m HEAD@{45}: commit: halaman login belum responsive
+[33m35a0121[m HEAD@{46}: commit: progress halaman login belum selesai
+[33m54993f9[m HEAD@{47}: commit: install tailwindcss v4.1
+[33mc330c38[m HEAD@{48}: commit: ada error sedikit
+[33m23ed820[m HEAD@{49}: commit: setting database users dan input role
+[33m8bbe862[m HEAD@{50}: commit: buat auth belum selesai
+[33mce7e552[m HEAD@{51}: clone: from https://github.com/Arflifie/project-pelaporan-rt.git

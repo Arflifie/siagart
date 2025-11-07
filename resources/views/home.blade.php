@@ -1,10 +1,9 @@
-@extends('layouts.layoutdashboard')
-
+@extends('layouts.layout')
 @section('content')
-<div class="min-h-screen flex flex-col items-center justify-center w-full overflow-x-hidden">
 
-    <!-- HEADER -->
-    <header class="relative w-full bg-yellow-400 text-white py-12 md:py-16 shadow-md rounded-b-3xl border-t border-white/30 overflow-hidden">
+<div class="flex flex-col items-center w-full overflow-x-hidden relative">
+
+    <header class="relative w-full bg-yellow-400 text-white py-12 md:py-16 shadow-md rounded-b-3xl mt-0 overflow-hidden">
         <div class="flex flex-col items-center text-center w-full px-4 sm:px-6">
             <span class="bg-black/20 text-[10px] sm:text-xs md:text-sm font-bold rounded-2xl px-3 py-1 mb-2 sm:mb-3">
                 SiagaRT
@@ -20,61 +19,62 @@
         </div>
     </header>
 
-    <!-- MAIN CONTENT -->
     <main class="flex-1 w-full max-w-7xl px-4 py-10 flex flex-col items-center">
 
-       <!-- SOS BUTTON -->
         <section class="relative flex justify-center items-center">
             <div class="absolute w-80 h-80 bg-red-700/5 rounded-full hidden md:block"></div>
             <div class="absolute w-64 h-64 bg-red-700/10 rounded-full hidden md:block"></div>
 
             <a href="{{ url('/pelaporan') }}"
-                class="relative w-40 h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 bg-red-700 rounded-full flex items-center justify-center text-white text-3xl md:text-5xl lg:text-6xl font-bold shadow-xl hover:scale-105 transition-transform cursor-pointer sos-animate no-underline">
+                class="relative w-40 h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 bg-red-700 rounded-full flex items-center justify-center text-white text-3xl md:text-5xl lg:text-6xl font-bold shadow-xl hover:scale-105 transition-transform cursor-pointer animate-pulse-heavy no-underline">
                 SOS
             </a>
         </section>
 
-        <!-- KONTAK DARURAT -->
         <section class="w-full px-2 py-10 mb-8">
             <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-4">Kontak Darurat</h3>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 
-                <!-- Polisi -->
                 <a href="tel:110"
                     class="bg-white shadow rounded-2xl p-5 flex flex-col items-center text-center hover:shadow-amber-600 transition hover:scale-105 no-underline">
                     <div class="bg-amber-400 w-14 h-14 rounded-xl mb-3 flex items-center justify-center">
-                        {!! file_get_contents(public_path('icons/polisi.svg')) !!}
+                        @if(file_exists(public_path('icons/polisi.svg')))
+                            {!! file_get_contents(public_path('icons/polisi.svg')) !!}
+                        @endif
                     </div>
                     <p class="text-base md:text-lg font-bold text-gray-800">Polisi</p>
                     <p class="text-sm md:text-base font-semibold text-red-700/80">No: 110</p>
                 </a>
 
-                <!-- Damkar -->
                 <a href="tel:113"
                     class="bg-white shadow rounded-2xl p-5 flex flex-col items-center text-center hover:shadow-amber-600 transition hover:scale-105 no-underline">
                     <div class="bg-amber-400 w-14 h-14 rounded-xl mb-3 flex items-center justify-center">
-                        {!! file_get_contents(public_path('icons/damkar.svg')) !!}
+                        @if(file_exists(public_path('icons/damkar.svg')))
+                            {!! file_get_contents(public_path('icons/damkar.svg')) !!}
+                        @endif
                     </div>
                     <p class="text-base md:text-lg font-bold text-gray-800">Damkar</p>
                     <p class="text-sm md:text-base font-semibold text-red-700/80">No: 113</p>
                 </a>
 
-                <!-- Ambulans -->
                 <a href="tel:119"
                     class="bg-white shadow rounded-2xl p-5 flex flex-col items-center text-center hover:shadow-amber-600 transition hover:scale-105 no-underline">
                     <div class="bg-amber-400 w-14 h-14 rounded-xl mb-3 flex items-center justify-center">
-                        {!! file_get_contents(public_path('icons/ambulans.svg')) !!}
+                        @if(file_exists(public_path('icons/ambulans.svg')))
+                            {!! file_get_contents(public_path('icons/ambulans.svg')) !!}
+                        @endif
                     </div>
                     <p class="text-base md:text-lg font-bold text-gray-800">Ambulans</p>
                     <p class="text-sm md:text-base font-semibold text-red-700/80">No: 119</p>
                 </a>
 
-                <!-- Petugas RT -->
                 <div
                     class="bg-white shadow rounded-2xl p-5 flex flex-col items-center text-center hover:shadow-amber-600 transition hover:scale-105">
                     <div class="bg-amber-400 w-14 h-14 rounded-xl mb-3 flex items-center justify-center">
-                        {!! file_get_contents(public_path('icons/rt.svg')) !!}
+                        @if(file_exists(public_path('icons/rt.svg')))
+                            {!! file_get_contents(public_path('icons/rt.svg')) !!}
+                        @endif
                     </div>
                     <p class="text-base md:text-lg font-bold text-gray-800">Petugas RT</p>
                     <p class="text-sm md:text-base font-semibold text-red-700/80">No: +62XXXXXX</p>
@@ -82,7 +82,6 @@
             </div>
         </section>
 
-        <!-- HISTORI LAPORAN -->
         <section class="w-full px-2 py-10 mb-16">
             <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-2">Histori Laporan</h3>
             <p class="text-gray-500 text-sm md:text-base mb-4">Riwayat laporan terakhir kamu</p>
@@ -113,4 +112,5 @@
         </section>
     </main>
 </div>
+
 @endsection
