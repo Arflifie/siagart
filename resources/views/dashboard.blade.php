@@ -22,21 +22,71 @@
             </div>
         </section>
 
+        <section class="min-h-[80vh] mt-10 px-4">
+            <h1 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600 mb-8 text-center md:text-left">Nomor Darurat</h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 place-items-center ">
+                <a href="tel:113"
+                    class="flex flex-col md:flex-row items-center shadow-lg p-6 w-full max-w-md text-gray-600 font-bold rounded-xl hover:shadow-2xl transition duration-150 ease-in-out">
+                    <img src="{{ asset('img/firefighter.svg') }}" alt="damkar" class="w-32 h-auto mx-auto md:mx-0">
+                    <span class="text-xl mt-4 md:mt-0 md:ml-6">Damkar</span>
+                </a>
+
+                <a href="tel:110"
+                    class="flex flex-col md:flex-row items-center shadow-lg p-6 w-full max-w-md text-gray-600 font-bold rounded-xl hover:shadow-2xl transition duration-150 ease-in-out">
+                    <img src="{{ asset('img/Police.svg') }}" alt="polisi" class="w-32 h-auto mx-auto md:mx-0">
+                    <span class="text-xl mt-4 md:mt-0 md:ml-6">Polisi</span>
+                </a>
+
+                <a href="tel:118"
+                    class="flex flex-col md:flex-row items-center shadow-lg p-6 w-full max-w-md text-gray-600 font-bold rounded-xl hover:shadow-2xl transition duration-150 ease-in-out">
+                    <img src="{{ asset('img/ambulance.svg') }}" alt="ambulance" class="w-32 h-auto mx-auto md:mx-0">
+                    <span class="text-xl mt-4 md:mt-0 md:ml-6">Ambulans</span>
+                </a>
+
+                <a href="tel:115"
+                    class="flex flex-col md:flex-row items-center shadow-lg p-6 w-full max-w-md text-gray-600 font-bold rounded-xl hover:shadow-2xl transition duration-150 ease-in-out">
+                    <img src="{{ asset('img/sar.svg') }}" alt="basarnas" class="w-32 h-auto mx-auto md:mx-0">
+                    <span class="text-xl mt-4 md:mt-0 md:ml-6">Basarnas</span>
+                </a>
+            </div>
+        </section>
+
         {{-- section 2 --}}
-        <section class="min-h-[85vh] text-center">
-            <h1 class="text-xl md:text-3xl font-bold text-gray-600">Apa Fungsi Kami?</h1>
-            <section
-                class="shadow-xl w-auto p-2 mx-auto h-100 mt-10 md:flex md:space-x-20 md:justify-center md:items-center">
+        <section class="min-h-[80vh] mt-10">
+            <h1 class="text-xl md:text-3xl font-bold text-gray-700 text-center md:text-left">Kenapa Sistem Ini Penting?</h1>
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-3 gap-5 items-center mt-20">
                 <div
-                    class="w-auto p-6 py-20 px-20 bg-yellow-800 rounded-xl text-white font-bold hover:shadow-lg hover:scale-105 transition duration-150 ease-in-out">
-                    tempat pelaporan</div>
+                    class="flex-1 bg-gray-500 rounded-xl text-white text-center font-semibold text-lg p-10 hover:bg-yellow-700 hover:scale-105 hover:shadow-xl transition duration-200 ease-in-out">
+                    Tempat Pelaporan
+                </div>
+
                 <div
-                    class="w-auto p-6 py-20 px-20 bg-yellow-800 rounded-xl text-white font-bold hover:shadow-lg hover:scale-105 transition duration-150 ease-in-out">
-                    kirim notifikasi ke staf RT</div>
+                    class="flex-1 bg-gray-500 rounded-xl text-white text-center font-semibold text-lg p-10 hover:bg-yellow-700 hover:scale-105 hover:shadow-xl transition duration-200 ease-in-out">
+                    Efisien
+                </div>
+
                 <div
-                    class="w-auto p-6 py-20 px-20 bg-yellow-800 rounded-xl text-white font-bold hover:shadow-lg hover:scale-105 transition duration-150 ease-in-out">
-                    Informasi Cepat</div>
-            </section>
+                    class="flex-1 bg-gray-500 rounded-xl text-white text-center font-semibold text-lg p-10 hover:bg-yellow-700 hover:scale-105 hover:shadow-xl transition duration-200 ease-in-out">
+                    Data terarsip
+                </div>
+                <div
+                    class="flex-1 bg-gray-500 rounded-xl text-white text-center font-semibold text-lg p-10 hover:bg-yellow-700 hover:scale-105 hover:shadow-xl transition duration-200 ease-in-out">
+                    Koordinasi mudah
+                </div>
+                <div
+                    class="flex-1 bg-gray-500 rounded-xl text-white text-center font-semibold text-lg p-10 hover:bg-yellow-700 hover:scale-105 hover:shadow-xl transition duration-200 ease-in-out">
+                    Lingkungan aman
+                </div>
+
+            </div>
+        </section>
+
+        {{-- section 3 --}}
+        <section class="min-h-[80vh] text-center mt-10 md:text-left">
+            <h1 class="text-xl md:text-3xl font-bold text-gray-600">Alur Pelaporan</h1>
         </section>
     </main>
 @endsection

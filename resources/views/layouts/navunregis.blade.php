@@ -6,8 +6,8 @@
 
     <div class="hidden md:flex space-x-6">
         <div class="flex gap-7 list-none">
-            <a href="{{ route('login') }}" class="text-white font-bold no-underline text-lg hover:text-gray-500">Login</a>
-            <a href="{{ route('register') }}" class="text-white font-bold no-underline text-lg hover:text-gray-500">Register</a>
+            <a href="{{ route('login') }}" class="text-white font-semibold no-underline text-lg hover:text-gray-500">Login</a>
+            <a href="{{ route('register') }}" class="text-white font-semibold no-underline text-lg hover:text-gray-500">Register</a>
         </div>
     </div>
 
@@ -16,7 +16,7 @@
     </button>
 
     <div id="mobile-menu" class="hidden md:hidden w-full transition duration-200 ease-in-out">
-        <div class="text-2xl flex flex-col gap-2 mt-5 text-center w-full font-bold">
+        <div class="text-2xl flex flex-col gap-2 mt-5 text-center w-full font-semibold">
             <a href="{{ route('login') }}"
                 class="block w-full py-3 px-4 border-2 border-white rounded-xl text-white no-underline 
               hover:bg-gray-300 hover:text-yellow-600 transition duration-200">

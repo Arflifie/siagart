@@ -9,7 +9,7 @@
                     Halo, <span class="text-yellow-500">{{ Auth::user()->name }}</span>
                 </h1>
                 <p class="text-lg md:text-xl lg:text-2xl text-gray-600 mt-8 md:mt-10">
-                    <span class="text-yellow-600">Ada kejadian darurat?</span> Jangan ragu, segera
+                    <span class="text-yellow-600 font-semibold">Ada kejadian darurat?</span> Jangan ragu, segera
                     laporkan agar kami bisa membantu lebih cepat.
                 </p>
                 <a href="{{ Route('pelaporan') }}"
