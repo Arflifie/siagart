@@ -2,6 +2,7 @@
 @section('content')
     <main class="max-w-7xl mx-auto px-6">
 
+        {{-- section 1 --}}
         <section class="min-h-[85vh] mt-10 md:grid md:grid-cols-2 md:items-center md:text-left md:gap-16 text-center">
             <section>
                 <h2 class="text-2xl md:text-3xl lg:text-5xl font-bold text-gray-600">
@@ -19,6 +20,16 @@
                 <img class="mt-5" src="{{ asset('img/report.gif') }}" alt="ilustrasi"
                     class="w-64 md:w-80 lg:w-[400px] h-auto object-contain">
             </div>
+        </section>
+
+        {{-- section 2 --}}
+        <section class="min-h-[85vh] text-center">
+            <h1 class="text-xl md:text-3xl font-bold text-gray-600">Apa Fungsi Kami?</h1>
+            <section class="shadow-lg w-auto p-2 mx-auto h-auto mt-10">
+                <div class="w-auto p-6">tempat pelaporan</div>
+                <div class="w-auto p-6">kirim notifikasi ke staf RT</div>
+                <div class="w-auto p-6">Informasi Cepat</div>
+            </section>
         </section>
     </main>
 @endsection
