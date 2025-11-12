@@ -6,6 +6,14 @@
 
     <div class="hidden md:flex space-x-6">
         <div class="flex gap-7 list-none">
+            <a href="/" class="text-white font-semibold no-underline text-lg hover:text-gray-500">Beranda</a>
+            <a href="/FAQ" class="text-white font-semibold no-underline text-lg hover:text-gray-500">FAQ</a>
+            <a href="#nomor-darurat" class="text-white font-semibold no-underline text-lg hover:text-gray-500">Nomor Darurat</a>
+        </div>
+    </div>
+
+    <div class="hidden md:flex space-x-6">
+        <div class="flex gap-7 list-none">
             <a href="{{ route('login') }}" class="text-white font-semibold no-underline text-lg hover:text-gray-500">Login</a>
             <a href="{{ route('register') }}" class="text-white font-semibold no-underline text-lg hover:text-gray-500">Register</a>
         </div>

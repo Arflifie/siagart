@@ -3,7 +3,7 @@
 <div class="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
      <div class="absolute top-0 left-0 w-90 h-90 md:w-100 md:h-100 lg:w-150 lg:h-150 bg-blue-800 rounded-full -translate-x-1/4 -translate-y-1/5 opacity-80"></div>
      <div class="absolute bottom-0 right-0 w-90 h-90  md:w-100 md:h-100 lg:w-150 lg:h-150 bg-yellow-600 rounded-full translate-x-1/3 translate-y-1/5"></div>
-   
+    <a href="{{url()->previous()}}">kembali</a>
     <div class="w-full max-w-md relative z-10">
         <div class="mb-15">
             <h2 class="text-white font-bold">Selamat Datang di</h2>

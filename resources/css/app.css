@@ -41,3 +41,7 @@ a[class*="no-underline"] {
     text-decoration: none !important;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+

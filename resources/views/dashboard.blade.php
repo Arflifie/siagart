@@ -13,7 +13,7 @@
                     dan nyaman
                 </p>
                 <a class="block mt-10 bg-yellow-500 mx-auto md:mx-0 w-64 py-4 rounded-xl text-white font-bold
-                     hover:bg-yellow-700 hover:scale-105 hover:shadow-lg transition duration-200 ease-in-out text-center md:text-lg"
+                     hover:bg-yellow-700 hover:scale-105 hover:shadow-lg transition duration-200 ease-in-out text-center md:text-lg" id="nomor-darurat"
                     href="{{ Route('register') }}">Buat Laporan!</a>
             </section>
             <div class="mt-10 md:mt-0 flex justify-center md:justify-end">
@@ -21,8 +21,12 @@
                     class="w-64 md:w-80 lg:w-[400px] h-auto object-contain">
             </div>
         </section>
+        
 
-        <section class="min-h-[80vh] mt-10 px-4">
+
+
+        {{-- section 2 --}}
+        <section class="min-h-[80vh] mt-10 px-4" >
             <h1 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600 mb-8 text-center md:text-left">Nomor Darurat</h1>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5 place-items-center ">
@@ -44,12 +48,13 @@
                     <span class="text-xl mt-4 md:mt-0 md:ml-6">Ambulans</span>
                 </a>
 
-                <a href="tel:115"
+                <a href="tel:115" 
                     class="flex flex-col md:flex-row items-center shadow-lg p-6 w-full max-w-md text-gray-600 font-bold rounded-xl hover:shadow-2xl transition duration-150 ease-in-out">
                     <img src="{{ asset('img/sar.svg') }}" alt="basarnas" class="w-32 h-auto mx-auto md:mx-0">
                     <span class="text-xl mt-4 md:mt-0 md:ml-6">Basarnas</span>
                 </a>
-            </div>
+            </div >
+            
         </section>
 
         {{-- section 2 --}}
