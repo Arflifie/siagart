@@ -1,37 +1,19 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "installCommand": "npm install",
-        "buildCommand": "npm run build"
-      }
-    },
-    {
-      "src": "public/index.php",
-      "use": "vercel-php@0.7.0",
-      "config": {
-        "installCommand": "composer install --no-dev --optimize-autoloader"
-      }
-    }
+    { "src": "public/index.php", "use": "@vercel/php" },
+    { "src": "vite.config.js", "use": "@vercel/static-build", "config": { "distDir": "public/build" } }
   ],
   "routes": [
-    {
-      "src": "/build/(.*)",
-      "dest": "/public/build/$1"
-    },
-    {
-      "src": "/(css|js|images|assets|fonts|svg|favicon.ico)(.*)",
-      "dest": "/public/$1$2"
-    },
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/public/index.php"
-    }
-  ]
+    { "src": "/build/(.*)", "dest": "/public/build/$1" },
+    { "src": "/favicon.ico", "dest": "/public/favicon.ico" },
+    { "src": "/robots.txt", "dest": "/public/robots.txt" },
+    { "src": "/(.*)", "dest": "/public/index.php" }
+  ],
+  "env": {
+    "APP_ENV": "production",
+    "APP_DEBUG": "false",
+    "APP_STORAGE": "/tmp",
+    "LOG_CHANNEL": "stderr"
+  }
 }
