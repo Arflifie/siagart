@@ -1,5 +1,5 @@
 <nav class="flex p-4 items-center justify-between bg-yellow-500 sticky top-0 z-50 flex-wrap shadow-lg">
-    <div class="font-bold text-xl text-white flex items-center">
+    <div class="font-bold text-md text-white flex items-center">
         <img src="{{ asset('img/whitelogonotext.png') }}" alt="logo" width="40">
         <span class="ml-1">SiagaRT</span>
     </div>
@@ -12,11 +12,11 @@
     </div>
 
     <button id="menu-button" class="text-white md:hidden focus:outline-none cursor-pointer">
-        <i id="menu-icon" class="fa-solid fa-bars fa-2xl"></i>
+        <i id="menu-icon" class="fa-solid fa-bars fa-xl"></i>
     </button>
 
-    <div id="mobile-menu" class="hidden md:hidden w-full transition duration-200 ease-in-out">
-        <div class="text-2xl flex flex-col gap-2 mt-5 text-center w-full font-semibold">
+    <div id="mobile-menu" class="hidden md:hidden transition duration-200 ease-in-out w-full">
+        <div class="text-lg mt-5 text-center font-semibold w-auto">
             <a href="{{ route('login') }}"
                 class="block w-full py-3 px-4 border-2 border-white rounded-xl text-white no-underline 
               hover:bg-gray-300 hover:text-yellow-600 transition duration-200">
@@ -24,7 +24,7 @@
             </a>
             <a href="{{ route('register') }}"
                 class="block w-full py-3 px-4 border-2 border-white rounded-xl text-white no-underline 
-              bg-yellow-700 hover:bg-gray-300 hover:text-yellow-600 transition duration-200">
+              bg-yellow-700 hover:bg-gray-300 hover:text-yellow-600 transition duration-200 mt-4">
                 Register
             </a>
         </div>

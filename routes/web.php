@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Authcontroller;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ReportController;
 
 Route::get('/', function () {
     return view('dashboard');
@@ -17,8 +18,9 @@ Route::post('/logout', [Authcontroller::class, 'logout'])->name('logout');
 
 Route::get('/home', [HomeController::class, 'home'])->name('home');
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
-Route::get('/pelaporan', [HomeController::class, 'pelaporan'])->name('pelaporan');
+
 Route::get('users/{user}', [UserController::class, 'show']);
 
-Route::get('/home', [HomeController::class, 'home']);
+Route::get('/report', [ReportController::class, 'create'])->name('report.create');
+Route::post('/report',[ReportController::class, 'store'])->name('report.store');
 

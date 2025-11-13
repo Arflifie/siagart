@@ -1,11 +1,50 @@
 @extends('layouts.layoutauth')
 
 @section('content')
-    <div class="flex justify-center items-center bg-[#f5f0ea] p-6 md:p-10 min-h-[80vh]">
+    <div class="max-w-lg mx-auto bg-white p-6 rounded-xl shadow-md">
+        <h1 class="text-2xl font-bold mb-4">Form Laporan</h1>
+
+        @if (session('success'))
+            <div class="bg-green-100 text-green-700 p-3 rounded mb-4">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        <form action="{{ route('report.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <label>Nama</label>
+            <input type="text" name="name" class="w-full border p-2 rounded mb-3" required>
+
+            <label>Lokasi</label>
+            <input type="text" name="location" class="w-full border p-2 rounded mb-3" required>
+
+            <label>Kategori</label>
+            <input type="text" name="category" class="w-full border p-2 rounded mb-3" required>
+
+            <label>Tanggal</label>
+            <input type="date" name="date" class="w-full border p-2 rounded mb-3" required>
+
+            <label>Foto</label>
+            <input type="file" name="photo" class="w-full border p-2 rounded mb-3">
+
+            <label>Deskripsi Singkat</label>
+            <textarea name="description" class="w-full border p-2 rounded mb-3" required></textarea>
+
+            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                Kirim
+            </button>
+        </form>
+    </div>
+    {{-- <div class="flex justify-center items-center bg-[#f5f0ea] p-6 md:p-10 min-h-[80vh]">
         <div class="bg-white rounded-2xl shadow-lg p-6 w-full max-w-md">
             <h1 class="text-xl font-bold text-[#b5382e] text-center mb-6">Formulir Laporan</h1>
 
-            <form id="laporanForm" novalidate>
+            @if (session('success'))
+            <div>{session{'success'}}</div>
+            @endif
+
+            <form action="{{route('report.store')}}" method="POST" enctype="multipart/form-data">
+                @csrf
                 <!-- Nama Lengkap -->
                 <div class="mb-4">
                     <label class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
@@ -89,12 +128,12 @@
                 <!-- Tombol Kirim -->
                 <div class="flex justify-center">
                     <button type="submit"
-                        class="bg-blue-500 text-white font-semibold py-2 px-16 rounded-2xl! hover:bg-blue-600 transition shadow-md">
+                        class="bg-blue-500 text-white font-semibold py-2 px-16 rounded-2xl! hover:bg-blue-600 transition shadow-md cursor-pointer">
                         Kirim
                     </button>
                 </div>
             </form>
-        </div>
+        </div> --}}
     </div>
 
     <script>

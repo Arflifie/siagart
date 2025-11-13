@@ -1,29 +1,33 @@
 @extends('layouts.layoutunregis')
 @section('content')
-    <main class="max-w-7xl mx-auto px-6">
+    <main class="">
 
         {{-- section 1 --}}
-        <section class="min-h-[85vh] mt-10 md:grid md:grid-cols-2 md:items-center md:text-left md:gap-16 text-center">
-            <section>
-                <h2 class="text-2xl md:text-3xl lg:text-5xl font-bold text-gray-600">
-                    <span class="text-yellow-500">Keamanan Lingkungan</span> Adalah Tanggung Jawab Bersama
-                </h2>
-                <p class="text-lg md:text-xl lg:text-2xl text-gray-600 mt-8 md:mt-10">
-                    Dengan satu klik, anda dapat melaporkan kejadian darurat untuk menciptakan lingkungan yang lebih aman
-                    dan nyaman
-                </p>
-                <a class="block mt-10 bg-yellow-500 mx-auto md:mx-0 w-64 py-4 rounded-xl text-white font-bold
+        <section class="min-h-[85vh] bg-gray-400">
+            <div class="md:grid md:grid-cols-2 md:items-center md:text-left md:gap-16 text-center max-w-7xl mx-auto py-20">
+                <section>
+                    <h2 class="text-2xl md:text-3xl lg:text-5xl font-bold text-gray-600">
+                        <span class="text-yellow-500">Keamanan Lingkungan</span> Adalah Tanggung Jawab Bersama
+                    </h2>
+                    <p class="text-lg md:text-xl lg:text-2xl text-gray-600 mt-8 md:mt-10">
+                        Dengan satu klik, anda dapat melaporkan kejadian darurat untuk menciptakan lingkungan yang lebih
+                        aman
+                        dan nyaman
+                    </p>
+                    <a class="block mt-10 bg-yellow-500 mx-auto md:mx-0 w-64 py-4 rounded-xl text-white font-bold
                      hover:bg-yellow-700 hover:scale-105 hover:shadow-lg transition duration-200 ease-in-out text-center md:text-lg"
-                    href="{{ Route('register') }}">Buat Laporan!</a>
-            </section>
-            <div class="mt-10 md:mt-0 flex justify-center md:justify-end">
-                <img class="mt-5" src="{{ asset('img/report.gif') }}" alt="ilustrasi"
-                    class="w-64 md:w-80 lg:w-[400px] h-auto object-contain">
+                        href="{{ Route('register') }}">Buat Laporan!</a>
+                </section>
+                <div class="mt-10 md:mt-0 flex justify-center md:justify-end">
+                    <img class="mt-5" src="{{ asset('img/report.gif') }}" alt="ilustrasi"
+                        class="w-64 md:w-80 lg:w-[400px] h-auto object-contain">
+                </div>
             </div>
         </section>
 
         <section class="min-h-[80vh] mt-10 px-4">
-            <h1 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600 mb-8 text-center md:text-left">Nomor Darurat</h1>
+            <h1 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600 mb-8 text-center md:text-left">Nomor Darurat
+            </h1>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5 place-items-center ">
                 <a href="tel:113"
@@ -56,8 +60,7 @@
         <section class="min-h-[80vh] mt-10">
             <h1 class="text-xl md:text-3xl font-bold text-gray-700 text-center md:text-left">Kenapa Sistem Ini Penting?</h1>
 
-            <div
-                class="grid grid-cols-1 md:grid-cols-3 gap-5 items-center mt-20">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 items-center mt-20">
                 <div
                     class="flex-1 bg-gray-500 rounded-xl text-white text-center font-semibold text-lg p-10 hover:bg-yellow-700 hover:scale-105 hover:shadow-xl transition duration-200 ease-in-out">
                     Tempat Pelaporan

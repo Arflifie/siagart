@@ -1,5 +1,5 @@
 <nav class="flex p-4 items-center justify-between bg-yellow-500 sticky top-0 z-50 flex-wrap w-full shadow-lg">
-    <div class="font-bold text-xl text-white flex items-center">
+    <div class="font-bold text-lg text-white flex items-center">
         <img src="{{ asset('img/whitelogonotext.png') }}" alt="logo" width="40">
         <span class="ml-1">SiagaRT</span>
     </div>
@@ -43,19 +43,19 @@
     </div>
 
     <button id="menu-button" class="text-white md:hidden focus:outline-none cursor-pointer">
-        <i id="menu-icon" class="fa-solid fa-bars fa-2xl"></i>
+        <i id="menu-icon" class="fa-solid fa-bars fa-xl"></i>
     </button>
 
     <div id="mobile-menu" class="hidden md:hidden w-full text-center mt-10">
         <div class="flex flex-col gap-3">
             <a href="/beranda"
-                class="text-white border-white text-xl font-bold py-3 border-2 rounded-xl hover:bg-gray-300 hover:text-yellow-700">Beranda</a>
+                class="text-white border-white text-lg font-bold py-3 border-2 rounded-xl hover:bg-gray-300 hover:text-yellow-700">Beranda</a>
             <a href="#"
-                class="text-white border-white text-xl font-bold py-3 border-2 rounded-xl hover:bg-gray-300 hover:text-yellow-700">Histori</a>
+                class="text-white border-white text-lg font-bold py-3 border-2 rounded-xl hover:bg-gray-300 hover:text-yellow-700">Histori</a>
             <a href="#"
-                class="text-white border-white text-xl font-bold py-3 border-2 rounded-xl hover:bg-gray-300 hover:text-yellow-700">FAQ</a>
+                class="text-white border-white text-lg font-bold py-3 border-2 rounded-xl hover:bg-gray-300 hover:text-yellow-700">FAQ</a>
             <a href="#"
-                class="text-white border-white text-xl font-bold py-3 border-2 rounded-xl hover:bg-gray-300 hover:text-yellow-700">Profile</a>
+                class="text-white border-white text-lg font-bold py-3 border-2 rounded-xl hover:bg-gray-300 hover:text-yellow-700">Profile</a>
             
 
             <form action="{{ Route('logout') }}" method="POST"

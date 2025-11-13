@@ -12,7 +12,7 @@
                     <span class="text-yellow-600 font-semibold">Ada kejadian darurat?</span> Jangan ragu, segera
                     laporkan agar kami bisa membantu lebih cepat.
                 </p>
-                <a href="{{ Route('pelaporan') }}"
+                <a href="{{ Route('report.create') }}"
                     class="block mt-10 bg-yellow-500 mx-auto md:mx-0 w-64 py-4 rounded-xl text-white font-bold
                      hover:bg-yellow-700 hover:scale-105 hover:shadow-lg transition duration-200 ease-in-out text-center md:text-lg">
                     Laporkan Sekarang!

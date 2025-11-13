@@ -6,11 +6,11 @@
    
     <div class="w-full max-w-md relative z-10">
         <div class="mb-15">
-            <h2 class="text-white font-bold">Selamat Datang di</h2>
+            <h2 class="text-white font-bold text-xl">Selamat Datang di</h2>
             <span class="text-white text-6xl font-bold italic">SiagaRT</span>
         </div>
         <div class="mb-8 text-center">
-            <span class="text-white text-3xl italic">Login</span>
+            <span class="text-white text-3xl font-semibold">Login</span>
         </div>
         @if (session('failed'))
             <div class="bg-red-500 text-white px-4 py-3 rounded-lg 
@@ -23,7 +23,7 @@
         <form action="/login" method="POST" novalidate>
             @csrf
             <div>
-                <label for="" class="font-bold text-white">email</label><br>
+                <label for="" class="font-bold text-white">Email</label><br>
                 <input type="email" id="email" name="email" required title="harap masukkan email" placeholder="Masukkan email" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
                 @error('email')
                 <small class="text-red-600 bg-white px-4 rounded">{{$message}}</small>
