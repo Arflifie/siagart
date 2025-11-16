@@ -17,5 +17,11 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
         ]);
+        Schema::disableForeignKeyConstraints();
+
+        Produk::truncate();
+        
+        Schema::enableForeignKeyConstraints();
     }
+
 }

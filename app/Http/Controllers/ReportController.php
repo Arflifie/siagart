@@ -38,19 +38,13 @@ class ReportController extends Controller
         ]);
 
         Mail::raw("Laporan baru dari {$report->name} di lokasi {$report->location}.", function($message){
-            $message->to('admin@gmail.com')->subject('Notifikasi Laporan Baru');
+            $message->to('siagartjambi@gmail.com')->subject('Notifikasi Laporan Baru');
         });
 
-        Http::withHeaders([
-            'Authorization' => env('FONNTE_TOKEN'),
-        ])->post('https://api.fonnte.com/send', [
-            'target' => '6285163220401', // nomor admin
-            'message' => "📢 Laporan Baru Masuk!\n\n"
-                . "👤 Nama: {$report->name}\n"
-                . "📍 Lokasi: {$report->location}\n"
-                . "🏷️ Kategori: {$report->category}\n"
-                . "📅 Tanggal: {$report->date}\n"
-                . "📝 Deskripsi: {$report->description}",
+        Http::WithHeaders([
+            'Authorization' => env('FONNTE_TOKEN')
+        ])->post('https://api.fonnte.com/send', ['target' => '6285163220401', 
+        'message' => 'Laporan baru: \nNama: {$report-name}\nLokasi: {$report->location}\nKategori: {$report->category}\nTanggal: {$report->date}',
         ]);
 
         return redirect()->back()->with('success', 'Laporan berhasil dikirim dan notifikasi terkirim.');
