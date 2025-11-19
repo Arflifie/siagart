@@ -26,7 +26,7 @@
 
 <body class="">
 
-    @include('layouts.navunregis')
+    @include('layouts.navadmin')
 
 
 
