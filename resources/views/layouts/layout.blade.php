@@ -24,7 +24,7 @@
 
 </head>
 
-<body class=""">
+<body class="">
 
     @include('layouts.navuser')
 

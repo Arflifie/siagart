@@ -18,12 +18,10 @@
 </head>
 <body class="bg-gray-100 text-gray-700 font-[Montserrat]">
 
-    @include('layouts.navunregis')
-
     <div class="min-h-screen flex flex-col justify-center px-6">
         @yield('content')
     </div>
-
+    
     @include('layouts.footer')
 
 </body>
