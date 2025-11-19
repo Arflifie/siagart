@@ -42,7 +42,7 @@
 
     </div>
 
-    <div class="border-t border-gray-700 px-6 py-4 md:px-8 lg:px-12">
+    <div class="border-t border-white px-6 py-4 md:px-8 lg:px-12">
         <p class="text-center text-gray-400 text-sm">
             &copy; {{ date('Y') }} SiagaRT. Semua hak dilindungi.
         </p>

@@ -6,8 +6,9 @@
 
     <div class="hidden md:flex space-x-6">
         <div class="flex gap-10 list-none">
-            <a href="#Tentang" class="text-white font-semibold no-underline text-lg hover:text-gray-500">Tentang</a>
-            <a href="#Alur" class="text-white font-semibold no-underline text-lg hover:text-gray-500">Alur</a>
+            <a href="#home" class="text-white font-semibold no-underline text-lg hover:text-gray-500">Home</a>
+            <a href="#nomor_darurat" class="text-white font-semibold no-underline text-lg hover:text-gray-500">Nomor Darurat</a>
+            <a href="#alur" class="text-white font-semibold no-underline text-lg hover:text-gray-500">Alur</a>
             <a href="#FAQ" class="text-white font-semibold no-underline text-lg hover:text-gray-500">FAQ</a>
         </div>
     </div>
@@ -51,9 +52,12 @@
             <a href="/beranda"
                 class="text-white border-white text-lg font-bold py-3 border-2 rounded-xl hover:bg-gray-300 hover:text-yellow-700">Tentang</a>
             <a href="#"
+                class="text-white border-white text-lg font-bold py-3 border-2 rounded-xl hover:bg-gray-300 hover:text-yellow-700">Nomor Darurat</a>
+                <a href="#"
                 class="text-white border-white text-lg font-bold py-3 border-2 rounded-xl hover:bg-gray-300 hover:text-yellow-700">Alur</a>
             <a href="#"
                 class="text-white border-white text-lg font-bold py-3 border-2 rounded-xl hover:bg-gray-300 hover:text-yellow-700">FAQ</a>
+            
             
         </div>
     </div>
