@@ -33,25 +33,25 @@
                 <h2 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600 mb-12 text-center">Nomor Darurat</h2>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 place-items-center max-w-5xl mx-auto">
-                    <a href="tel:113"
+                    <a href="tel:113" data-aos="fade-right"
                         class="flex flex-col md:flex-row items-center shadow-lg p-6 w-full max-w-md text-gray-600 font-bold rounded-xl hover:shadow-2xl transition bg-white">
                         <img src="{{ asset('img/firefighter.svg') }}" alt="damkar" class="w-32 h-auto mx-auto md:mx-0">
                         <span class="text-xl mt-4 md:mt-0 md:ml-6">Damkar</span>
                     </a>
 
-                    <a href="tel:110"
+                    <a href="tel:110" data-aos="fade-left"
                         class="flex flex-col md:flex-row items-center shadow-lg p-6 w-full max-w-md text-gray-600 font-bold rounded-xl hover:shadow-2xl transition bg-white">
                         <img src="{{ asset('img/Police.svg') }}" alt="polisi" class="w-32 h-auto mx-auto md:mx-0">
                         <span class="text-xl mt-4 md:mt-0 md:ml-6">Polisi</span>
                     </a>
 
-                    <a href="tel:118"
+                    <a href="tel:118" data-aos="fade-right"
                         class="flex flex-col md:flex-row items-center shadow-lg p-6 w-full max-w-md text-gray-600 font-bold rounded-xl hover:shadow-2xl transition bg-white">
                         <img src="{{ asset('img/ambulance.svg') }}" alt="ambulance" class="w-32 h-auto mx-auto md:mx-0">
                         <span class="text-xl mt-4 md:mt-0 md:ml-6">Ambulans</span>
                     </a>
 
-                    <a href="tel:115"
+                    <a href="tel:115" data-aos="fade-left"
                         class="flex flex-col md:flex-row items-center shadow-lg p-6 w-full max-w-md text-gray-600 font-bold rounded-xl hover:shadow-2xl transition bg-white">
                         <img src="{{ asset('img/sar.svg') }}" alt="basarnas" class="w-32 h-auto mx-auto md:mx-0">
                         <span class="text-xl mt-4 md:mt-0 md:ml-6">Basarnas</span>
@@ -68,7 +68,8 @@
                 <h2 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600 text-center">
                     Alur Laporan
                 </h2>
-                <div class="mt-8 text-center text-gray-500 place-items-center">
+                <div class="mt-8 text-center text-gray-500 place-items-center" data-aos="fade-zoom-in"
+                    data-aos-easing="ease-in-back" data-aos-offset="0"">
                     <img src="{{ asset('img/route_pelaporan.png') }}" alt="Alur Pelaporan" width="750">
                 </div>
             </div>
@@ -81,9 +82,15 @@
                     FAQ
                 </h2>
                 <div class="mt-8 text-center text-gray-500">
-                    (Riwayat laporan Anda akan muncul di sini)
+                    (FAQ akan muncul di sini)
                 </div>
             </div>
         </section>
     </main>
+@endsection
+
+@section('scripts')
+    <script>
+        AOS.init();
+    </script>
 @endsection
