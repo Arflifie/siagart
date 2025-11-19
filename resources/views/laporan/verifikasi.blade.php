@@ -65,7 +65,7 @@
 @section('scripts')
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            let form = document.getElementById('laporanForm');
+            let form = document.getElementById('formVerifikasi');
 
             form.addEventListener('submit', function() {
                 Swal.fire({
