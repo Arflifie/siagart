@@ -16,7 +16,7 @@ class LaporanController extends Controller
                          ->orderBy('created_at', 'desc')
                          ->paginate(15);
 
-        return view('admin.laporan.index', compact('reports'));
+        return view('admin.dashboardadmin', compact('reports'));
     }
 
     // Update status oleh Admin
