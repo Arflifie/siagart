@@ -14,11 +14,16 @@ return new class extends Migration
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('location');
+            $table->string('email');
+            $table->string('wa_number');
             $table->string('category');
-            $table->date('date');
-            $table->string('photo')->nullabe();
-            $table->text('description');
+            $table->text('details');
+            $table->string('photo_path')->nullable();
+
+            $table->string('status')->default('pending_verification');
+            $table->string('otp_code')->nullable();
+            $table->timestamp('otp_expires_at')->nullable();
+
             $table->timestamps();
         });
     }

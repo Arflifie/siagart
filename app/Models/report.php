@@ -2,19 +2,22 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Report extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
+    protected $fillable =[
         'name',
-        'location',
+        'email',
+        'wa_number',
         'category',
-        'date',
-        'photo',
-        'description',
+        'details',
+        'photo_path',
+        'status',
+        'otp_code',
+        'otp_expires_at',
     ];
 }

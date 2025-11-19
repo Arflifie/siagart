@@ -1,26 +1,36 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Authcontroller;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ReportController;
+use App\Http\Controllers\ReportController; // <-- Tambahkan ini
+use App\Http\Controllers\Admin\LaporanController as AdminLaporanController; // <-- Tambahkan ini
 
-Route::get('/', function () {
-    return view('dashboard');
+Route::get('/', function(){
+    return view('home');
+})->name('home');
+
+// Rute untuk Pelaporan Publik (Tidak perlu login)
+Route::get('/lapor', [ReportController::class, 'create'])->name('laporan.create');
+Route::post('/lapor', [ReportController::class, 'store'])->name('laporan.store');
+Route::get('/lapor/verifikasi/{report}', [ReportController::class, 'showVerificationForm'])->name('laporan.verifikasi.form');
+Route::post('/lapor/verifikasi/{report}', [ReportController::class, 'verify'])->name('laporan.verifikasi.submit');
+Route::get('/lapor/sukses', function () {
+    return view('laporan.sukses');
+})->name('laporan.sukses');
+
+
+// Rute Dashboard Admin (Bawaan Breeze, sudah ada)
+Route::get('/dashboard', function () {
+    return redirect()->route('admin.laporan.index'); // Langsung arahkan ke daftar laporan
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+// Rute Admin Kita (Wajib login)
+Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
+    // Daftar Laporan
+    Route::get('/laporan', [AdminLaporanController::class, 'index'])->name('laporan.index');
+    
+    // Proses Update Status
+    Route::post('/laporan/{report}/update-status', [AdminLaporanController::class, 'updateStatus'])->name('laporan.updateStatus');
 });
 
-Route::get('/login', fn () => view('auth.login'))->name('login');
-Route::get('/register', fn () => view('auth.register')) -> name('register');
-Route::post('/login', [Authcontroller::class, 'login']);
-Route::post('/register', [Authcontroller::class, 'register']);
-Route::post('/logout', [Authcontroller::class, 'logout'])->name('logout');
-
-
-Route::get('/home', [HomeController::class, 'home'])->name('home');
-Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
-
-Route::get('users/{user}', [UserController::class, 'show']);
-
-Route::get('/report', [ReportController::class, 'create'])->name('report.create');
-Route::post('/report',[ReportController::class, 'store'])->name('report.store');
-
+// Rute Auth Bawaan Breeze
+require __DIR__.'/auth.php';

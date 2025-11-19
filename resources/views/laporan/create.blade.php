@@ -12,7 +12,7 @@
                     </div>
                 @endif
                 
-                <form action="{{ route('report.create') }}" method="POST" enctype="multipart/form-data" class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <form action="{{ route('laporan.store') }}" method="POST" enctype="multipart/form-data" class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
                     @csrf
                     
                     <div class="flex flex-col w-full">
@@ -27,21 +27,21 @@
                     </div>
 
                     <div class="flex flex-col w-full">
-                        <label for="location" class="font-semibold text-gray-700 mb-1">Lokasi</label>
-                        <input type="text" id="location" name="location" placeholder="Contoh: Depan pos satpam" value="{{ old('location') }}"
+                        <label for="email" class="font-semibold text-gray-700 mb-1">Email</label>
+                        <input type="text" id="email" name="email" placeholder="Masukkan email anda" value="{{old('email')}}"
                             class="px-5 py-3 rounded-lg border border-gray-300 mt-1
                                    focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 transition">
-                        @error('location')
+                        @error('email')
                             <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                         @enderror
                     </div>
 
                     <div class="flex flex-col w-full">
-                        <label for="date" class="font-semibold text-gray-700 mb-1">Tanggal</label>
-                        <input type="date" id="date" name="date" value="{{ old('date') }}"
+                        <label for="wa_number" class="font-semibold text-gray-700 mb-1">Nomor WhatsApp</label>
+                        <input type="number" id="wa_number" name="wa_number" value="{{old('wa_number')}}" placeholder="Masukkan nomor WhatsApp aktif"
                             class="px-5 py-3 rounded-lg border border-gray-300 mt-1
                                    focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 transition">
-                        @error('date')
+                        @error('wa_number')
                             <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                         @enderror
                     </div>
@@ -59,13 +59,13 @@
                                 <option value="Bencana Alam" {{ old('category') == 'Bencana Alam' ? 'selected' : '' }}>Bencana Alam</option>
                                 <option value="Lainnya" {{ old('category') == 'Lainnya' ? 'selected' : '' }}>Lainnya</option>
                             </select>
-                            <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
+                            {{-- <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
                                 <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M19 9l-7 7-7-7"></path>
                                 </svg>
-                            </div>
+                            </div> --}}
                         </div>
                         @error('category')
                             <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
@@ -128,10 +128,10 @@
             
                     <div class="md:col-span-2 flex flex-col w-full">
                         <label for="description" class="font-semibold text-gray-700 mb-1">Deskripsi</label>
-                        <textarea name="description" id="description" rows="5" placeholder="Jelaskan kejadian secara rinci..."
+                        <textarea name="details" id="details" rows="5" placeholder="Jelaskan kejadian secara rinci..."
                             class="px-5 py-3 rounded-lg border border-gray-300 mt-1
-                                   focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 transition">{{ old('description') }}</textarea>
-                        @error('description')
+                                   focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 transition">{{ old('details') }}</textarea>
+                        @error('details')
                             <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                         @enderror
                     </div>

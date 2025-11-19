@@ -4,17 +4,17 @@
 
         {{-- Section 1: Hero (Salam Pembuka) --}}
         <section
-            class="min-h-[80vh] py-16 px-6 max-w-7xl mx-auto md:grid md:grid-cols-2 md:items-center md:text-left md:gap-16 text-center">
+            class="min-h-[90vh] py-16 px-6 max-w-7xl mx-auto md:grid md:grid-cols-2 md:items-center md:text-left md:gap-16 text-center">
 
             <div>
                 <h1 class="text-2xl md:text-3xl lg:text-5xl font-bold text-gray-600">
-                    Halo, <span class="text-yellow-500">{{ Auth::user()->name }}</span>
+                    Halo, <span class="text-yellow-500"></span>
                 </h1>
                 <p class="text-lg md:text-xl lg:text-2xl text-gray-600 mt-8 md:mt-10">
                     <span class="text-yellow-600 font-semibold">Ada kejadian darurat?</span> Jangan ragu, segera
                     laporkan agar kami bisa membantu lebih cepat.
                 </p>
-                <a href="{{ Route('report.create') }}"
+                <a href="{{route('laporan.create')}}"
                     class="block mt-10 bg-yellow-500 mx-auto md:mx-0 w-64 py-4 rounded-xl text-white font-bold
                            hover:bg-yellow-700 hover:scale-105 hover:shadow-lg transition duration-200 ease-in-out text-center md:text-lg">
                     Laporkan Sekarang!
