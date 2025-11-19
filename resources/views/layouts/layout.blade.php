@@ -19,20 +19,26 @@
     <link rel="icon" href="{{ asset('img/logonotext.png') }}" type="image/png">
 
     {{-- icon google --}}
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+    {{-- AOS --}}
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 </head>
 
-<body class=""">
+<body class="">
 
-    @include('layouts.navregis')
+    @include('layouts.navuser')
 
     <div class="grow">
         @yield(section: 'content')
     </div>
 
     @include('layouts.footer')
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    @yield('scripts')
 </body>
 
 </html>

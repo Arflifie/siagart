@@ -14,11 +14,10 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('phone')->unique();
+            $table->string('phone')->unique()->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->enum('role', ['admin', 'customer'])->default('customer');
-            $table->enum('status', ['verify', 'active', 'banned'])->default('active');
+            $table->string('role')->default('admin');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

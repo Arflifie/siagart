@@ -23,7 +23,7 @@ class Authcontroller extends Controller
             'password.max' => 'password terlalu panjang, maksimal 20 karakter',
         ]);
         if(Auth::attempt($request->only('email', 'password'), $request->has('remember'))){
-            return redirect('/home');
+            return redirect('admin.dashboardadmin');
         }
         return back()->with('failed', 'Email dan password salah');
     }

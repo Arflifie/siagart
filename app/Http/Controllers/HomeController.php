@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+// namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 
-class HomeController extends Controller
-{
-    public function home(){
-        return view('/home');
-    }
+// class HomeController extends Controller
+// {
+//     public function home(){
+//         return view('/home');
+//     }
 
-    public function dashboard(){
-        return view('/dashboard');
-    }
+//     public function dashboard(){
+//         return view('/dashboard');
+//     }
 
-        public function pelaporan(){
-        return view('/pelaporan');
-    }
-}
+//         public function pelaporan(){
+//         return view('/pelaporan');
+//     }
+// }

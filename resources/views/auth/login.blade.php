@@ -1,47 +1,67 @@
-@extends('layouts.layoutauth')
+@extends('layouts.guest')
+
+@section('title', 'Login')
+
 @section('content')
-<div class="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
-     <div class="absolute top-0 left-0 w-90 h-90 md:w-100 md:h-100 lg:w-150 lg:h-150 bg-blue-800 rounded-full -translate-x-1/4 -translate-y-1/5 opacity-80"></div>
-     <div class="absolute bottom-0 right-0 w-90 h-90  md:w-100 md:h-100 lg:w-150 lg:h-150 bg-yellow-600 rounded-full translate-x-1/3 translate-y-1/5"></div>
-   
-    <div class="w-full max-w-md relative z-10">
-        <div class="mb-15">
-            <h2 class="text-white font-bold text-xl">Selamat Datang di</h2>
-            <span class="text-white text-6xl font-bold italic">SiagaRT</span>
-        </div>
-        <div class="mb-8 text-center">
-            <span class="text-white text-3xl font-semibold">Login</span>
-        </div>
-        @if (session('failed'))
-            <div class="bg-red-500 text-white px-4 py-3 rounded-lg 
-            relative mb-4" role="alert">
-                <span class="block sm:inline">
-                    {{session('failed')}}
-                </span></div>
-        @endif
-            
-        <form action="/login" method="POST" novalidate>
+    <div class="max-w-md w-full mx-auto bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+
+        <h1 class="text-2xl font-bold text-gray-600 text-center">Masuk ke SiagaRT</h1>
+
+        <p class="text-center text-gray-500 mt-2 mb-6">
+            Silakan login untuk melanjutkan
+        </p>
+
+        {{-- Form Login --}}
+        <form method="POST" action="{{ route('login') }}" class="space-y-5">
             @csrf
+
+            {{-- Email --}}
             <div>
-                <label for="" class="font-bold text-white">Email</label><br>
-                <input type="email" id="email" name="email" required title="harap masukkan email" placeholder="Masukkan email" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
-                @error('email')
-                <small class="text-red-600 bg-white px-4 rounded">{{$message}}</small>
-                @enderror
+                <label class="text-gray-600 font-semibold">Email</label>
+                <input type="email" name="email"
+                    class="w-full mt-2 px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
+                    required autofocus>
             </div>
-            <div class="mt-3">
-                <label for="" class="text-white font-bold">Password</label><br>
-                <input type="password" id="password" name="password" required title="harap masukkan password" placeholder="Masukkan password" class="bg-white w-full py-2.5 rounded-lg px-3 outline-none">
-                @error('password')
-                <small class="text-red-600 bg-white px-4 rounded">{{$message}}</small>
-            @enderror
+
+            {{-- Password --}}
+            <div class="relative">
+                <label class="text-gray-600 font-semibold">Password</label>
+
+                <input type="password" id="password" name="password"
+                    class="w-full mt-2 px-4 py-3 pr-12 rounded-xl border border-gray-300 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
+                    required>
+
+                {{-- Icon Show/Hide --}}
+                <span onclick="togglePassword()"
+                    class="absolute right-4 top-8 mt-3 cursor-pointer text-gray-600">
+                    <i id="eyeIcon" class="fa-solid fa-eye"></i>
+                </span>
             </div>
-            <div class="mt-15 text-center">
-                <button type="submit" 
-                class="bg-green-600 w-40 py-2.5 !rounded-2xl !no-underline !text-xl font-bold text-white transition duration-300 ease-in-out hover:bg-green-800 hover:scale-110"
-                >Login</button>
-            </div>
+
+            {{-- Submit --}}
+            <button
+                class="w-full bg-yellow-500 text-white font-bold py-3 rounded-xl hover:bg-yellow-600 hover:scale-105 transition">
+                Login
+            </button>
+
         </form>
+
     </div>
-</div>
+
+    <script>
+        function togglePassword() {
+            const pwd = document.getElementById('password');
+            const icon = document.getElementById('eyeIcon');
+
+            if (pwd.type === "password") {
+                pwd.type = "text";
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
+            } else {
+                pwd.type = "password";
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
+            }
+        }
+    </script>
 @endsection
