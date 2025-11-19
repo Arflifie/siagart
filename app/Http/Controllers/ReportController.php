@@ -40,7 +40,9 @@ class ReportController extends Controller
 
         // Upload Foto
         if ($request->hasFile('photo')) {
-            $data['photo_path'] = $request->file('photo')->store('reports', 'public');
+            $path = $request->file('photo')->store('report', 'supabase');
+
+            $data['photo_path'] = $path;
         }
 
         // Simpan ke Database
@@ -102,7 +104,7 @@ class ReportController extends Controller
 
         // B. Kirim Notifikasi Email ke Admin (Pak RT)
         try {
-            $adminEmail = 'email_pak_rt@gmail.com'; // <--- GANTI DENGAN EMAIL PAK RT ASLI
+            $adminEmail = 'siagartjambi@gmail.com'; // <--- GANTI DENGAN EMAIL PAK RT ASLI
             Mail::to($adminEmail)->send(new AdminNotificationMail($report));
         } catch (\Exception $e) {
             Log::error('Gagal kirim notif email ke admin: ' . $e->getMessage());

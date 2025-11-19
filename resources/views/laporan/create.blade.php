@@ -1,9 +1,10 @@
 @extends('layouts.layout')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @section('content')
     <div class="bg-gray-100 min-h-screen py-12 md:py-16">
         <div class="flex justify-center p-4">
             <div class="bg-white w-full max-w-4xl p-8 md:p-12 rounded-2xl shadow-2xl">
-                
+
                 <h1 class="text-[#b5382e] font-semibold text-2xl md:text-3xl text-center">Form Laporan</h1>
 
                 @if (session('success'))
@@ -11,16 +12,18 @@
                         {{ session('success') }}
                     </div>
                 @endif
-                
-                <form action="{{ route('laporan.store') }}" method="POST" enctype="multipart/form-data" class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-                    @csrf
-                    
+
+                <form action="{{ route('laporan.store') }}" method="POST" enctype="multipart/form-data"
+                    class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6" id="laporanForm">
+                    @csrf 
+
                     <div class="flex flex-col w-full">
                         <label for="name" class="font-semibold text-gray-700 mb-1">Nama</label>
-                        <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" value="{{ old('name') }}"
+                        <input type="text" id="name" name="name" placeholder="Masukkan nama Anda"
+                            value="{{ old('name') }}"
                             class="px-5 py-3 rounded-lg border border-gray-300 mt-1
                                    focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 transition">
-                        
+
                         @error('name')
                             <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                         @enderror
@@ -28,7 +31,8 @@
 
                     <div class="flex flex-col w-full">
                         <label for="email" class="font-semibold text-gray-700 mb-1">Email</label>
-                        <input type="text" id="email" name="email" placeholder="Masukkan email anda" value="{{old('email')}}"
+                        <input type="text" id="email" name="email" placeholder="Masukkan email anda"
+                            value="{{ old('email') }}"
                             class="px-5 py-3 rounded-lg border border-gray-300 mt-1
                                    focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 transition">
                         @error('email')
@@ -38,7 +42,8 @@
 
                     <div class="flex flex-col w-full">
                         <label for="wa_number" class="font-semibold text-gray-700 mb-1">Nomor WhatsApp</label>
-                        <input type="number" id="wa_number" name="wa_number" value="{{old('wa_number')}}" placeholder="Masukkan nomor WhatsApp aktif"
+                        <input type="number" id="wa_number" name="wa_number" value="{{ old('wa_number') }}"
+                            placeholder="Masukkan nomor WhatsApp aktif"
                             class="px-5 py-3 rounded-lg border border-gray-300 mt-1
                                    focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 transition">
                         @error('wa_number')
@@ -48,16 +53,21 @@
 
                     <div class="flex flex-col w-full">
                         <label for="category" class="font-semibold text-gray-700 mb-1">Kategori</label>
-                        <div class="relative w-full mt-1"> 
+                        <div class="relative w-full mt-1">
                             <select name="category" id="category"
                                 class="px-5 py-3 rounded-lg border border-gray-300 appearance-none bg-white
                                        w-full 
                                        focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 transition">
-                                <option value="" disabled {{ old('category') ? '' : 'selected' }}>Pilih kategori...</option>
-                                <option value="Pencurian" {{ old('category') == 'Pencurian' ? 'selected' : '' }}>Pencurian</option>
-                                <option value="Kebakaran" {{ old('category') == 'Kebakaran' ? 'selected' : '' }}>Kebakaran</option>
-                                <option value="Bencana Alam" {{ old('category') == 'Bencana Alam' ? 'selected' : '' }}>Bencana Alam</option>
-                                <option value="Lainnya" {{ old('category') == 'Lainnya' ? 'selected' : '' }}>Lainnya</option>
+                                <option value="" disabled {{ old('category') ? '' : 'selected' }}>Pilih kategori...
+                                </option>
+                                <option value="Pencurian" {{ old('category') == 'Pencurian' ? 'selected' : '' }}>Pencurian
+                                </option>
+                                <option value="Kebakaran" {{ old('category') == 'Kebakaran' ? 'selected' : '' }}>Kebakaran
+                                </option>
+                                <option value="Bencana Alam" {{ old('category') == 'Bencana Alam' ? 'selected' : '' }}>
+                                    Bencana Alam</option>
+                                <option value="Lainnya" {{ old('category') == 'Lainnya' ? 'selected' : '' }}>Lainnya
+                                </option>
                             </select>
                             {{-- <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
                                 <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -72,7 +82,7 @@
                         @enderror
                     </div>
 
-                    
+
                     <div class="md:col-span-2 flex flex-col w-full" x-data="{ photoPreview: '', showModal: false, selectedImage: '' }">
                         <label for="photo" class="font-semibold text-gray-700 mb-1">Foto Kejadian</label>
                         <label for="photo" x-show="!photoPreview"
@@ -88,15 +98,15 @@
                                     <span class="relative font-medium text-yellow-600 hover:text-yellow-500">
                                         Upload file
                                     </span>
-                                    
-                                    <p class="pl-1">atau tarik dan lepas</p> 
+
+                                    <p class="pl-1">atau tarik dan lepas</p>
                                 </div>
                                 <p class="text-xs text-gray-500">PNG, JPG, (MAX. 1MB)</p>
                             </div>
                         </label>
                         <div x-show="photoPreview"
                             class="mt-1 w-full h-32 relative group rounded-lg border-2 border-gray-300 overflow-hidden"
-                            style="display: none;"> 
+                            style="display: none;">
                             <img :src="photoPreview" @click="showModal = true; selectedImage = photoPreview;"
                                 class="w-full h-full object-contain cursor-pointer" alt="Preview Foto">
                             <button type="button" @click="photoPreview = ''; $refs.photoInput.value = '';"
@@ -123,9 +133,9 @@
                         @enderror
 
                         <template x-teleport="body">
-                           </template>
+                        </template>
                     </div>
-            
+
                     <div class="md:col-span-2 flex flex-col w-full">
                         <label for="description" class="font-semibold text-gray-700 mb-1">Deskripsi</label>
                         <textarea name="details" id="details" rows="5" placeholder="Jelaskan kejadian secara rinci..."
@@ -148,4 +158,25 @@
         </div>
     </div>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+@endsection
+
+
+@section('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let form = document.getElementById('laporanForm');
+
+            form.addEventListener('submit', function() {
+                Swal.fire({
+                    title: "Membuat laporan...",
+                    text: "Mohon tunggu sebentar",
+                    allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    didOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
+            });
+        });
+    </script>
 @endsection
