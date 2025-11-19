@@ -8,7 +8,7 @@
 
             <div>
                 <h1 class="text-2xl md:text-3xl lg:text-5xl font-bold text-gray-600">
-                    Halo, <span class="text-yellow-500"></span>
+                    Halo, Warga +62  <span class="text-yellow-500"></span>
                 </h1>
                 <p class="text-lg md:text-xl lg:text-2xl text-gray-600 mt-8 md:mt-10">
                     <span class="text-yellow-600 font-semibold">Ada kejadian darurat?</span> Jangan ragu, segera

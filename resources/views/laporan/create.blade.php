@@ -5,7 +5,7 @@
         <div class="flex justify-center p-4">
             <div class="bg-white w-full max-w-4xl p-8 md:p-12 rounded-2xl shadow-2xl">
 
-                <h1 class="text-[#b5382e] font-semibold text-2xl md:text-3xl text-center">Form Laporan</h1>
+                <h1 class="text-[#b5382e] font-bold text-2xl md:text-3xl text-center">Form Laporan</h1>
 
                 @if (session('success'))
                     <div class="mt-6 p-4 bg-green-100 text-green-700 border border-green-300 rounded-lg">

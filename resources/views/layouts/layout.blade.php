@@ -26,7 +26,7 @@
 
 <body class=""">
 
-    @include('layouts.navregis')
+    @include('layouts.navuser')
 
     <div class="grow">
         @yield(section: 'content')
