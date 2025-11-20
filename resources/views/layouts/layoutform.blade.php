@@ -28,7 +28,7 @@
 
 <body class="">
 
-    @include('layouts.navuser')
+    @include('layouts.navform')
 
     <div class="grow">
         @yield(section: 'content')
@@ -38,7 +38,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
     @yield('scripts')
 </body>
 

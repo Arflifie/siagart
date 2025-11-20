@@ -6,9 +6,9 @@
         <section id="home"
             class="min-h-[90vh] py-16 px-6 max-w-7xl mx-auto md:grid md:grid-cols-2 md:items-center md:text-left md:gap-16 text-center">
 
-            <div>
-                <h1 class="text-2xl md:text-3xl lg:text-5xl font-bold text-gray-600">
-                    Halo, Warga RT 04 Kelurahan Kenali Besar <span class="text-yellow-500"></span>
+            <div data-aos="fade-right" data-aos-delay="50" data-aos-duration="500" data-aos-easing="ease-in-out">
+                <h1 id="type-text" class="text-2xl md:text-3xl lg:text-5xl font-bold text-gray-600">
+                    <span class="text-yellow-500"></span>
                 </h1>
                 <p class="text-lg md:text-xl lg:text-2xl text-gray-600 mt-8 md:mt-10">
                     <span class="text-yellow-600 font-semibold">Ada kejadian darurat?</span> Jangan ragu, segera
@@ -20,7 +20,8 @@
                     Laporkan Sekarang!
                 </a>
             </div>
-            <div class="mt-10 md:mt-0 flex justify-center md:justify-end">
+            <div class="mt-10 md:mt-0 flex justify-center md:justify-end" data-aos="fade-left" data-aos-delay="50"
+                data-aos-duration="500" data-aos-easing="ease-in-out">
                 <img src="{{ asset('img/Visual data.gif') }}" alt="visual data"
                     class="mx-auto md:mx-0 w-64 md:w-80 lg:w-[400px] h-auto object-contain">
             </div>
@@ -68,7 +69,7 @@
                 <h2 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600 text-center">
                     Alur Laporan
                 </h2>
-                <div class="mt-8 text-center text-gray-500 place-items-center" data-aos="fade-zoom-in"
+                <div class="mt-8 text-center text-gray-500 place-items-center" data-aos="flip-right" data-aos-duration="1000"
                     data-aos-easing="ease-in-back" data-aos-offset="0">
                     <img src="{{ asset('img/route_pelaporan.png') }}" alt="Alur Pelaporan" width="750">
                 </div>
@@ -82,7 +83,135 @@
                     FAQ
                 </h2>
                 <div class="mt-8 text-center text-gray-500">
-                    (FAQ akan muncul di sini)
+                   
+                    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto px-6 gap-5">
+                        {{-- section 1 --}}
+                        <div class="space-y-5">
+                            <div class="py-2 bg-white shadow w-full rounded-lg" data-aos="fade-right">
+                                <button
+                                    class="accordion-header w-full flex justify-between items-center py-4 px-5 bg-white hover:bg-gray-50 text-left text-lg font-semibold text-gray-800 transition-colors duration-200"
+                                    aria-expanded="false">
+                                    <span>Judul Bagian Pertama</span>
+
+                                    <span class="icon text-gray-500 transition-transform duration-300 transform">
+                                        <i class="fa-solid fa-caret-right"></i>
+                                    </span>
+                                </button>
+
+                                <div
+                                    class="accordion-content bg-gray-50 text-gray-700 max-h-0 overflow-hidden transition-all duration-300">
+                                    <p class="py-4 px-5">
+                                        Ini adalah penjelasan lengkap untuk Judul Bagian Pertama.
+                                        Anda bisa menempatkan paragraf, daftar, atau media lainnya di sini.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="py-2 bg-white shadow w-full rounded-lg" data-aos="fade-left">
+                                <button
+                                    class="accordion-header w-full flex justify-between items-center py-4 px-5 bg-white hover:bg-gray-50 text-left text-lg font-semibold text-gray-800 transition-colors duration-200"
+                                    aria-expanded="false">
+                                    <span>Judul Bagian Kedua</span>
+
+                                    <span class="icon text-gray-500 transition-transform duration-300 transform">
+                                        <i class="fa-solid fa-caret-right"></i>
+                                    </span>
+                                </button>
+
+                                <div
+                                    class="accordion-content bg-gray-50 text-gray-700 max-h-0 overflow-hidden transition-all duration-300">
+                                    <p class="py-4 px-5">
+                                        Ini adalah penjelasan lengkap untuk Judul Bagian Pertama.
+                                        Anda bisa menempatkan paragraf, daftar, atau media lainnya di sini.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- section 2 --}}
+                        <div class="space-y-5">
+                            <div class="py-2 bg-white shadow w-full rounded-lg" data-aos="fade-right">
+                                <button
+                                    class="accordion-header w-full flex justify-between items-center py-4 px-5 bg-white hover:bg-gray-50 text-left text-lg font-semibold text-gray-800 transition-colors duration-200"
+                                    aria-expanded="false">
+                                    <span>Judul Bagian Ketiga</span>
+
+                                    <span class="icon text-gray-500 transition-transform duration-300 transform">
+                                        <i class="fa-solid fa-caret-right"></i>
+                                    </span>
+                                </button>
+
+                                <div
+                                    class="accordion-content bg-gray-50 text-gray-700 max-h-0 overflow-hidden transition-all duration-300">
+                                    <p class="py-4 px-5">
+                                        Ini adalah penjelasan lengkap untuk Judul Bagian Pertama.
+                                        Anda bisa menempatkan paragraf, daftar, atau media lainnya di sini.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="py-2 bg-white shadow w-full rounded-lg" data-aos="fade=left">
+                                <button
+                                    class="accordion-header w-full flex justify-between items-center py-4 px-5 bg-white hover:bg-gray-50 text-left text-lg font-semibold text-gray-800 transition-colors duration-200"
+                                    aria-expanded="false">
+                                    <span>Judul Bagian Keempat</span>
+
+                                    <span class="icon text-gray-500 transition-transform duration-300 transform">
+                                        <i class="fa-solid fa-caret-right"></i>
+                                    </span>
+                                </button>
+
+                                <div
+                                    class="accordion-content bg-gray-50 text-gray-700 max-h-0 overflow-hidden transition-all duration-300">
+                                    <p class="py-4 px-5">
+                                        Ini adalah penjelasan lengkap untuk Judul Bagian Pertama.
+                                        Anda bisa menempatkan paragraf, daftar, atau media lainnya di sini.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- section 3 --}}
+                        <div class="space-y-5">
+                            <div class="py-2 bg-white shadow w-full rounded-lg" data-aos="fade-right">
+                                <button
+                                    class="accordion-header w-full flex justify-between items-center py-4 px-5 bg-white hover:bg-gray-50 text-left text-lg font-semibold text-gray-800 transition-colors duration-200"
+                                    aria-expanded="false">
+                                    <span>Judul Bagian Kelima</span>
+
+                                    <span class="icon text-gray-500 transition-transform duration-300 transform">
+                                        <i class="fa-solid fa-caret-right"></i>
+                                    </span>
+                                </button>
+
+                                <div
+                                    class="accordion-content bg-gray-50 text-gray-700 max-h-0 overflow-hidden transition-all duration-300">
+                                    <p class="py-4 px-5">
+                                        Ini adalah penjelasan lengkap untuk Judul Bagian Pertama.
+                                        Anda bisa menempatkan paragraf, daftar, atau media lainnya di sini.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="py-2 bg-white shadow w-full rounded-lg" data-aos="fade-left">
+                                <button
+                                    class="accordion-header w-full flex justify-between items-center py-4 px-5 bg-white hover:bg-gray-50 text-left text-lg font-semibold text-gray-800 transition-colors duration-200"
+                                    aria-expanded="false">
+                                    <span>Judul Bagian Keenam</span>
+
+                                    <span class="icon text-gray-500 transition-transform duration-300 transform">
+                                        <i class="fa-solid fa-caret-right"></i>
+                                    </span>
+                                </button>
+
+                                <div
+                                    class="accordion-content bg-gray-50 text-gray-700 max-h-0 overflow-hidden transition-all duration-300">
+                                    <p class="py-4 px-5">
+                                        Ini adalah penjelasan lengkap untuk Judul Bagian Pertama.
+                                        Anda bisa menempatkan paragraf, daftar, atau media lainnya di sini.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
                 </div>
             </div>
         </section>
@@ -92,5 +221,65 @@
 @section('scripts')
     <script>
         AOS.init();
+
+        document.addEventListener("DOMContentLoaded", function() {
+            new TypeIt("#type-text", {
+                    strings: [""],
+                })
+                .type("alo")
+                .move(-4, {
+                    delay: 100
+                })
+                .type("H")
+                .move(null, {
+                    to: "END"
+                })
+                .type(", waga RT 04")
+                .move(-8, {
+                    delay: 100
+                })
+                .type("r")
+                .move(null, {
+                    to: "END"
+                })
+                .type(" Kenali Besar")
+                .go();
+        });
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const headers = document.querySelectorAll('.accordion-header');
+
+            headers.forEach(header => {
+                header.addEventListener('click', function() {
+                    // Target ikon Font Awesome (elemen <i> dengan kelas .icon)
+                    const icon = this.querySelector('.icon');
+                    const content = this.nextElementSibling;
+
+                    // --- Logika Buka/Tutup Konten (Menggunakan max-height) ---
+                    if (content.style.maxHeight) {
+                        // Jika terbuka, tutup
+                        content.style.maxHeight = null;
+                        content.style.paddingTop = '0';
+                        content.style.paddingBottom = '0';
+                        this.setAttribute('aria-expanded', 'false');
+                    } else {
+                        // Jika tertutup, buka
+                        // Gunakan scrollHeight agar dapat mengakomodasi konten dengan tinggi bervariasi
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        content.style.paddingTop = '1rem'; // Sesuaikan dengan py-4
+                        content.style.paddingBottom = '1rem'; // Sesuaikan dengan py-4
+                        this.setAttribute('aria-expanded', 'true');
+                    }
+
+                    // --- Logika Rotasi Ikon Font Awesome ---
+                    // Togle kelas Tailwind 'rotate-90' pada elemen <i>
+                    icon.classList.toggle('rotate-90');
+
+                    // Opsional: Perubahan gaya pada header yang aktif
+                    this.classList.toggle('bg-gray-100');
+                });
+            });
+        });
     </script>
 @endsection
