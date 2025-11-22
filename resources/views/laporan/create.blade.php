@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.layoutform')
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @section('content')
     <div class="bg-gray-100 min-h-screen py-12 md:py-16">
