@@ -234,7 +234,7 @@
                 .move(null, {
                     to: "END"
                 })
-                .type(", waga RT 04")
+                .type(", Waga RT 04")
                 .move(-8, {
                     delay: 100
                 })

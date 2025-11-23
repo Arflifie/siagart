@@ -5,7 +5,7 @@
 @section('content')
     <div class="max-w-md w-full mx-auto bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
 
-        <h1 class="text-2xl font-bold text-gray-600 text-center">Masuk ke SiagaRT</h1>
+        <h1 class="text-2xl font-bold text-gray-600 text-center">Masuk ke Admin SiagaRT</h1>
 
         <p class="text-center text-gray-500 mt-2 mb-6">
             Silakan login untuk melanjutkan

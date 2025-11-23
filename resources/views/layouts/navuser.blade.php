@@ -49,13 +49,13 @@
 
     <div id="mobile-menu" class="hidden md:hidden w-full text-center mt-10">
         <div class="flex flex-col gap-3">
-            <a href="/beranda"
-                class="text-white border-white text-lg font-bold py-3 border-2 rounded-xl hover:bg-gray-300 hover:text-yellow-700">Tentang</a>
-            <a href="#"
+            <a href="#home"
+                class="text-white border-white text-lg font-bold py-3 border-2 rounded-xl hover:bg-gray-300 hover:text-yellow-700">Home</a>
+            <a href="#nomor_darurat"
                 class="text-white border-white text-lg font-bold py-3 border-2 rounded-xl hover:bg-gray-300 hover:text-yellow-700">Nomor Darurat</a>
-                <a href="#"
+                <a href="#alur"
                 class="text-white border-white text-lg font-bold py-3 border-2 rounded-xl hover:bg-gray-300 hover:text-yellow-700">Alur</a>
-            <a href="#"
+            <a href="#FAQ"
                 class="text-white border-white text-lg font-bold py-3 border-2 rounded-xl hover:bg-gray-300 hover:text-yellow-700">FAQ</a>
             
             
