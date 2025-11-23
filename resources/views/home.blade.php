@@ -91,7 +91,7 @@
                                 <button
                                     class="accordion-header w-full flex justify-between items-center py-4 px-5 bg-white hover:bg-gray-50 text-left text-lg font-semibold text-gray-800 transition-colors duration-200"
                                     aria-expanded="false">
-                                    <span>Judul Bagian Pertama</span>
+                                    <span>Apa itu layanan SOS?</span>
 
                                     <span class="icon text-gray-500 transition-transform duration-300 transform">
                                         <i class="fa-solid fa-caret-right"></i>
@@ -101,8 +101,8 @@
                                 <div
                                     class="accordion-content bg-gray-50 text-gray-700 max-h-0 overflow-hidden transition-all duration-300">
                                     <p class="py-4 px-5">
-                                        Ini adalah penjelasan lengkap untuk Judul Bagian Pertama.
-                                        Anda bisa menempatkan paragraf, daftar, atau media lainnya di sini.
+                                        Layanan SOS ini adalah sistem pelaporan keadaan darurat seperti kebakaran, kemalingan, kecelakaan, atau kondisi membahayakan lainnya. 
+                                        Laporan akan diteruskan ke pihak berwenang terkait agar penanganan dapat dilakukan secara cepat dan terkoordinasi.
                                     </p>
                                 </div>
                             </div>
@@ -110,7 +110,7 @@
                                 <button
                                     class="accordion-header w-full flex justify-between items-center py-4 px-5 bg-white hover:bg-gray-50 text-left text-lg font-semibold text-gray-800 transition-colors duration-200"
                                     aria-expanded="false">
-                                    <span>Judul Bagian Kedua</span>
+                                    <span>Siapa yang dapat menggunakan layanan ini?</span>
 
                                     <span class="icon text-gray-500 transition-transform duration-300 transform">
                                         <i class="fa-solid fa-caret-right"></i>
@@ -120,8 +120,7 @@
                                 <div
                                     class="accordion-content bg-gray-50 text-gray-700 max-h-0 overflow-hidden transition-all duration-300">
                                     <p class="py-4 px-5">
-                                        Ini adalah penjelasan lengkap untuk Judul Bagian Pertama.
-                                        Anda bisa menempatkan paragraf, daftar, atau media lainnya di sini.
+                                        Layanan ini dapat digunakan oleh seluruh masyarakat yang mengalami atau menyaksikan situasi darurat di area yang tercakup dalam jangkauan layanan.
                                     </p>
                                 </div>
                             </div>
@@ -133,7 +132,7 @@
                                 <button
                                     class="accordion-header w-full flex justify-between items-center py-4 px-5 bg-white hover:bg-gray-50 text-left text-lg font-semibold text-gray-800 transition-colors duration-200"
                                     aria-expanded="false">
-                                    <span>Judul Bagian Ketiga</span>
+                                    <span>Apakah data dan identitas pelapor aman?</span>
 
                                     <span class="icon text-gray-500 transition-transform duration-300 transform">
                                         <i class="fa-solid fa-caret-right"></i>
@@ -143,8 +142,7 @@
                                 <div
                                     class="accordion-content bg-gray-50 text-gray-700 max-h-0 overflow-hidden transition-all duration-300">
                                     <p class="py-4 px-5">
-                                        Ini adalah penjelasan lengkap untuk Judul Bagian Pertama.
-                                        Anda bisa menempatkan paragraf, daftar, atau media lainnya di sini.
+                                       Identitas pelapor dilindungi dan hanya digunakan untuk verifikasi dan penanganan darurat. Informasi tidak dibagikan kepada pihak lain tanpa izin.
                                     </p>
                                 </div>
                             </div>
@@ -152,7 +150,7 @@
                                 <button
                                     class="accordion-header w-full flex justify-between items-center py-4 px-5 bg-white hover:bg-gray-50 text-left text-lg font-semibold text-gray-800 transition-colors duration-200"
                                     aria-expanded="false">
-                                    <span>Judul Bagian Keempat</span>
+                                    <span>Bagaimana cara membuat laporan?</span>
 
                                     <span class="icon text-gray-500 transition-transform duration-300 transform">
                                         <i class="fa-solid fa-caret-right"></i>
@@ -162,9 +160,7 @@
                                 <div
                                     class="accordion-content bg-gray-50 text-gray-700 max-h-0 overflow-hidden transition-all duration-300">
                                     <p class="py-4 px-5">
-                                        Ini adalah penjelasan lengkap untuk Judul Bagian Pertama.
-                                        Anda bisa menempatkan paragraf, daftar, atau media lainnya di sini.
-                                    </p>
+                                       Pengguna dapat menekan tombol Emergency SOS pada website atau aplikasi, lalu memilih kategori kejadian, menambahkan lokasi, dan melampirkan foto atau keterangan tambahan sebelum mengirim laporan.
                                 </div>
                             </div>
                         </div>
@@ -175,7 +171,7 @@
                                 <button
                                     class="accordion-header w-full flex justify-between items-center py-4 px-5 bg-white hover:bg-gray-50 text-left text-lg font-semibold text-gray-800 transition-colors duration-200"
                                     aria-expanded="false">
-                                    <span>Judul Bagian Kelima</span>
+                                    <span>Apakah laporan diproses secara real-time?</span>
 
                                     <span class="icon text-gray-500 transition-transform duration-300 transform">
                                         <i class="fa-solid fa-caret-right"></i>
@@ -185,8 +181,7 @@
                                 <div
                                     class="accordion-content bg-gray-50 text-gray-700 max-h-0 overflow-hidden transition-all duration-300">
                                     <p class="py-4 px-5">
-                                        Ini adalah penjelasan lengkap untuk Judul Bagian Pertama.
-                                        Anda bisa menempatkan paragraf, daftar, atau media lainnya di sini.
+                                        Ya, laporan yang valid akan segera diteruskan ke petugas. Waktu respons bergantung pada jarak, kondisi lapangan, dan ketersediaan unit terdekat.
                                     </p>
                                 </div>
                             </div>
@@ -194,7 +189,7 @@
                                 <button
                                     class="accordion-header w-full flex justify-between items-center py-4 px-5 bg-white hover:bg-gray-50 text-left text-lg font-semibold text-gray-800 transition-colors duration-200"
                                     aria-expanded="false">
-                                    <span>Judul Bagian Keenam</span>
+                                    <span>Apakah layanan ini berbayar?</span>
 
                                     <span class="icon text-gray-500 transition-transform duration-300 transform">
                                         <i class="fa-solid fa-caret-right"></i>
@@ -204,8 +199,7 @@
                                 <div
                                     class="accordion-content bg-gray-50 text-gray-700 max-h-0 overflow-hidden transition-all duration-300">
                                     <p class="py-4 px-5">
-                                        Ini adalah penjelasan lengkap untuk Judul Bagian Pertama.
-                                        Anda bisa menempatkan paragraf, daftar, atau media lainnya di sini.
+                                        Tidak. Pelaporan darurat melalui sistem ini gratis dan dapat digunakan kapan saja selama layanan beroperasi.
                                     </p>
                                 </div>
                             </div>
