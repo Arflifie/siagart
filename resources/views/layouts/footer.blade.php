@@ -9,7 +9,7 @@
 
         <div class="text-sm text-center">
             <p class="mb-3 font-semibold text-white">Hubungi Kami:</p>
-            <div class="flex flex-col space-y-5">
+            <div class="flex flex-col space-y-5 md:text-left">
                 <a href="tel:+6281234567890" 
                    class="items-center text-gray-300 hover:text-amber-400 transition-colors block">
                     <i class="fa-solid fa-phone w-5 text-center"></i>

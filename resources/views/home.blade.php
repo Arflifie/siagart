@@ -4,11 +4,11 @@
 
         {{-- Section 1: Hero (Salam Pembuka) --}}
         <section id="home"
-            class="min-h-[90vh] py-16 px-6 max-w-7xl mx-auto md:grid md:grid-cols-2 md:items-center md:text-left md:gap-16 text-center">
+            class="min-h-[90vh] py-16 px-6 mx-auto md:grid md:grid-cols-2 md:items-center md:text-left md:gap-16 text-center p-4 md:px-20 lg:px-40">
 
             <div data-aos="fade-right" data-aos-delay="50" data-aos-duration="500" data-aos-easing="ease-in-out">
                 <h1 id="type-text" class="text-2xl md:text-3xl lg:text-5xl font-bold text-gray-600">
-                    <span class="text-yellow-500"></span>
+                    Halo, Warga RT 04 Kenali Besar
                 </h1>
                 <p class="text-lg md:text-xl lg:text-2xl text-gray-600 mt-8 md:mt-10">
                     <span class="text-yellow-600 font-semibold">Ada kejadian darurat?</span> Jangan ragu, segera
@@ -16,11 +16,11 @@
                 </p>
                 <a href="{{ route('laporan.create') }}"
                     class="block mt-10 bg-yellow-500 mx-auto md:mx-0 w-64 py-4 rounded-xl text-white font-bold
-                           hover:bg-yellow-700 hover:scale-105 hover:shadow-lg transition duration-200 ease-in-out text-center md:text-lg">
+                           hover:bg-yellow-700 hover:scale-105 hover:shadow-lg hover:text-yellow-300 transition duration-200 ease-in-out text-center md:text-lg">
                     Laporkan Sekarang!
                 </a>
             </div>
-            <div class="mt-10 md:mt-0 flex justify-center md:justify-end" data-aos="fade-left" data-aos-delay="50"
+            <div class="mt-10 md:mt-0 flex justify-center md:justify-end" data-aos="fade-up" data-aos-delay="50"
                 data-aos-duration="500" data-aos-easing="ease-in-out">
                 <img src="{{ asset('img/Visual data.gif') }}" alt="visual data"
                     class="mx-auto md:mx-0 w-64 md:w-80 lg:w-[400px] h-auto object-contain">
@@ -30,7 +30,7 @@
         {{-- Section 2: Nomor Darurat --}}
         <section class="min-h-[90vh] py-16 bg-gray-100" id="nomor_darurat">
             {{-- Ini adalah container baru untuk menampung konten di dalam section --}}
-            <div class="max-w-7xl mx-auto px-6">
+            <div class="mx-auto px-6 p-4 md:px-20 lg:px-40">
                 <h2 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600 mb-12 text-center">Nomor Darurat</h2>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 place-items-center max-w-5xl mx-auto">
@@ -65,31 +65,30 @@
 
         {{-- Section 3: (Konten Masa Depan) --}}
         <section class="min-h-[80vh]" id="alur">
-            <div class="max-w-7xl mx-auto px-6 py-16">
+            <div class="mx-auto px-6 py-16 p-4 md:px-20 lg:px-40">
                 <h2 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600 text-center">
                     Alur Laporan
                 </h2>
-                <div class="mt-8 text-center text-gray-500 place-items-center" data-aos="flip-right" data-aos-duration="1000"
-                    data-aos-easing="ease-in-back" data-aos-offset="0">
+                <div class="mt-8 text-center text-gray-500 place-items-center" data-aos="flip-right"
+                    data-aos-duration="1000" data-aos-easing="ease-in-back" data-aos-offset="0">
                     <img src="{{ asset('img/route_pelaporan.png') }}" alt="Alur Pelaporan" width="750">
                 </div>
             </div>
-
         </section>
 
         <section class="min-h-[90vh] bg-gray-100" id="FAQ">
-            <div class="max-w-7xl mx-auto py-16">
+            <div class="mx-auto py-16 p-4 md:px-20 lg:px-40">
                 <h2 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600 text-center">
                     FAQ
                 </h2>
                 <div class="mt-8 text-center text-gray-500">
-                   
+
                     <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto px-6 gap-5">
                         {{-- section 1 --}}
-                        <div class="space-y-5">
+                        <div class="">
                             <div class="py-2 bg-white shadow w-full rounded-lg" data-aos="fade-right">
                                 <button
-                                    class="accordion-header w-full flex justify-between items-center py-4 px-5 bg-white hover:bg-gray-50 text-left text-lg font-semibold text-gray-800 transition-colors duration-200"
+                                    class="accordion-header w-full flex justify-between items-center py-4 px-5 bg-white hover:bg-gray-50 text-left text-sm font-semibold text-gray-800 transition-colors duration-200"
                                     aria-expanded="false">
                                     <span>Apa itu layanan SOS?</span>
 
@@ -101,14 +100,20 @@
                                 <div
                                     class="accordion-content bg-gray-50 text-gray-700 max-h-0 overflow-hidden transition-all duration-300">
                                     <p class="py-4 px-5">
-                                        Layanan SOS ini adalah sistem pelaporan keadaan darurat seperti kebakaran, kemalingan, kecelakaan, atau kondisi membahayakan lainnya. 
-                                        Laporan akan diteruskan ke pihak berwenang terkait agar penanganan dapat dilakukan secara cepat dan terkoordinasi.
+                                        Layanan SOS ini adalah sistem pelaporan keadaan darurat seperti kebakaran,
+                                        pencurian, kecelakaan, atau kondisi membahayakan lainnya.
+                                        Laporan akan diteruskan ke pihak berwenang terkait agar penanganan dapat dilakukan
+                                        secara cepat dan terkoordinasi.
                                     </p>
                                 </div>
                             </div>
+                        </div>
+
+                        {{-- Section 2 --}}
+                        <div>
                             <div class="py-2 bg-white shadow w-full rounded-lg" data-aos="fade-left">
                                 <button
-                                    class="accordion-header w-full flex justify-between items-center py-4 px-5 bg-white hover:bg-gray-50 text-left text-lg font-semibold text-gray-800 transition-colors duration-200"
+                                    class="accordion-header w-full flex justify-between items-center py-4 px-5 bg-white hover:bg-gray-50 text-left text-sm font-semibold text-gray-800 transition-colors duration-200"
                                     aria-expanded="false">
                                     <span>Siapa yang dapat menggunakan layanan ini?</span>
 
@@ -120,17 +125,20 @@
                                 <div
                                     class="accordion-content bg-gray-50 text-gray-700 max-h-0 overflow-hidden transition-all duration-300">
                                     <p class="py-4 px-5">
-                                        Layanan ini dapat digunakan oleh seluruh masyarakat yang mengalami atau menyaksikan situasi darurat di area yang tercakup dalam jangkauan layanan.
+                                        Layanan ini dapat digunakan oleh seluruh masyarakat yang mengalami atau menyaksikan
+                                        situasi darurat di area yang tercakup dalam jangkauan layanan.
                                     </p>
                                 </div>
                             </div>
                         </div>
 
-                        {{-- section 2 --}}
-                        <div class="space-y-5">
+
+
+                        {{-- section 3 --}}
+                        <div class="">
                             <div class="py-2 bg-white shadow w-full rounded-lg" data-aos="fade-right">
                                 <button
-                                    class="accordion-header w-full flex justify-between items-center py-4 px-5 bg-white hover:bg-gray-50 text-left text-lg font-semibold text-gray-800 transition-colors duration-200"
+                                    class="accordion-header w-full flex justify-between items-center py-4 px-5 bg-white hover:bg-gray-50 text-left text-sm font-semibold text-gray-800 transition-colors duration-200"
                                     aria-expanded="false">
                                     <span>Apakah data dan identitas pelapor aman?</span>
 
@@ -142,13 +150,18 @@
                                 <div
                                     class="accordion-content bg-gray-50 text-gray-700 max-h-0 overflow-hidden transition-all duration-300">
                                     <p class="py-4 px-5">
-                                       Identitas pelapor dilindungi dan hanya digunakan untuk verifikasi dan penanganan darurat. Informasi tidak dibagikan kepada pihak lain tanpa izin.
+                                        Identitas pelapor dilindungi dan hanya digunakan untuk verifikasi dan penanganan
+                                        darurat. Informasi tidak dibagikan kepada pihak lain tanpa izin.
                                     </p>
                                 </div>
                             </div>
-                            <div class="py-2 bg-white shadow w-full rounded-lg" data-aos="fade=left">
+                        </div>
+
+                        {{-- Section 4 --}}
+                        <div>
+                            <div class="py-2 bg-white shadow w-full rounded-lg" data-aos="fade-left">
                                 <button
-                                    class="accordion-header w-full flex justify-between items-center py-4 px-5 bg-white hover:bg-gray-50 text-left text-lg font-semibold text-gray-800 transition-colors duration-200"
+                                    class="accordion-header w-full flex justify-between items-center py-4 px-5 bg-white hover:bg-gray-50 text-left text-sm font-semibold text-gray-800 transition-colors duration-200"
                                     aria-expanded="false">
                                     <span>Bagaimana cara membuat laporan?</span>
 
@@ -160,16 +173,21 @@
                                 <div
                                     class="accordion-content bg-gray-50 text-gray-700 max-h-0 overflow-hidden transition-all duration-300">
                                     <p class="py-4 px-5">
-                                       Pengguna dapat menekan tombol Emergency SOS pada website atau aplikasi, lalu memilih kategori kejadian, menambahkan lokasi, dan melampirkan foto atau keterangan tambahan sebelum mengirim laporan.
+                                        Pengguna dapat menekan tombol Emergency SOS pada website atau aplikasi, lalu memilih
+                                        kategori kejadian, menambahkan lokasi, dan melampirkan foto atau keterangan tambahan
+                                        sebelum mengirim laporan.
+                                    </p>
                                 </div>
                             </div>
                         </div>
 
-                        {{-- section 3 --}}
-                        <div class="space-y-5">
+
+
+                        {{-- section 5 --}}
+                        <div class="">
                             <div class="py-2 bg-white shadow w-full rounded-lg" data-aos="fade-right">
                                 <button
-                                    class="accordion-header w-full flex justify-between items-center py-4 px-5 bg-white hover:bg-gray-50 text-left text-lg font-semibold text-gray-800 transition-colors duration-200"
+                                    class="accordion-header w-full flex justify-between items-center py-4 px-5 bg-white hover:bg-gray-50 text-left text-sm font-semibold text-gray-800 transition-colors duration-200"
                                     aria-expanded="false">
                                     <span>Apakah laporan diproses secara real-time?</span>
 
@@ -181,13 +199,18 @@
                                 <div
                                     class="accordion-content bg-gray-50 text-gray-700 max-h-0 overflow-hidden transition-all duration-300">
                                     <p class="py-4 px-5">
-                                        Ya, laporan yang valid akan segera diteruskan ke petugas. Waktu respons bergantung pada jarak, kondisi lapangan, dan ketersediaan unit terdekat.
+                                        Ya, laporan yang valid akan segera diteruskan ke petugas. Waktu respons bergantung
+                                        pada jarak, kondisi lapangan, dan ketersediaan unit terdekat.
                                     </p>
                                 </div>
                             </div>
+                        </div>
+
+                        {{-- Section 6 --}}
+                        <div>
                             <div class="py-2 bg-white shadow w-full rounded-lg" data-aos="fade-left">
                                 <button
-                                    class="accordion-header w-full flex justify-between items-center py-4 px-5 bg-white hover:bg-gray-50 text-left text-lg font-semibold text-gray-800 transition-colors duration-200"
+                                    class="accordion-header w-full flex justify-between items-center py-4 px-5 bg-white hover:bg-gray-50 text-left text-sm font-semibold text-gray-800 transition-colors duration-200"
                                     aria-expanded="false">
                                     <span>Apakah layanan ini berbayar?</span>
 
@@ -199,15 +222,18 @@
                                 <div
                                     class="accordion-content bg-gray-50 text-gray-700 max-h-0 overflow-hidden transition-all duration-300">
                                     <p class="py-4 px-5">
-                                        Tidak. Pelaporan darurat melalui sistem ini gratis dan dapat digunakan kapan saja selama layanan beroperasi.
+                                        Tidak. Pelaporan darurat melalui sistem ini gratis dan dapat digunakan kapan
+                                        saja
+                                        selama layanan beroperasi.
                                     </p>
                                 </div>
                             </div>
                         </div>
-
-                    </section>
+                    </div>
                 </div>
-            </div>
+        </section>
+        </div>
+        </div>
         </section>
     </main>
 @endsection
@@ -216,29 +242,7 @@
     <script>
         AOS.init();
 
-        document.addEventListener("DOMContentLoaded", function() {
-            new TypeIt("#type-text", {
-                    strings: [""],
-                })
-                .type("alo")
-                .move(-4, {
-                    delay: 100
-                })
-                .type("H")
-                .move(null, {
-                    to: "END"
-                })
-                .type(", Waga RT 04")
-                .move(-8, {
-                    delay: 100
-                })
-                .type("r")
-                .move(null, {
-                    to: "END"
-                })
-                .type(" Kenali Besar")
-                .go();
-        });
+
 
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -277,3 +281,27 @@
         });
     </script>
 @endsection
+
+{{-- document.addEventListener("DOMContentLoaded", function() {
+            new TypeIt("#type-text", {
+                    strings: [""],
+                })
+                .type("alo")
+                .move(-4, {
+                    delay: 100
+                })
+                .type("H")
+                .move(null, {
+                    to: "END"
+                })
+                .type(", Waga RT 04")
+                .move(-8, {
+                    delay: 100
+                })
+                .type("r")
+                .move(null, {
+                    to: "END"
+                })
+                .type(" Kenali Besar")
+                .go();
+        }); --}}
