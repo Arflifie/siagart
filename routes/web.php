@@ -8,6 +8,10 @@ Route::get('/', function(){
     return view('home');
 })->name('home');
 
+Route::get('/admin.analisis_admin', function(){
+    return view('analisis');
+})->name('analisis');
+
 // Rute untuk Pelaporan Publik (Tidak perlu login)
 Route::get('/lapor', [ReportController::class, 'create'])->name('laporan.create');
 Route::post('/lapor', [ReportController::class, 'store'])->name('laporan.store');
@@ -27,9 +31,9 @@ Route::get('/dashboard', function () {
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
     // Daftar Laporan
     Route::get('/laporan', [AdminLaporanController::class, 'index'])->name('laporan.index');
-    
     // Proses Update Status
     Route::post('/laporan/{report}/update-status', [AdminLaporanController::class, 'updateStatus'])->name('laporan.updateStatus');
+    
 });
 
 // Rute Auth Bawaan Breeze

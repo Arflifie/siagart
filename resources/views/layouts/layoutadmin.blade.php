@@ -1,44 +1,39 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="id">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SiagaRT @yield(section: 'tittle')</title>
-    {{-- font montserrat --}}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiagaRT - Admin Dashboard</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    {{-- tailwindcss --}}
-    @vite('resources/css/app.css')
-
-    {{-- favicon --}}
     <link rel="icon" href="{{ asset('img/logonotext.png') }}" type="image/png">
-
-    {{-- icon google --}}
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-
-    {{-- AOS --}}
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
+    
+    <script src="//unpkg.com/alpinejs" defer></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        [x-cloak] { display: none !important; } /* Mencegah kedipan saat loading */
+    </style>
 </head>
+<body class="bg-gray-50 text-slate-800">
 
-<body class="">
+    <div x-data="{ sidebarOpen: false }" class="flex h-screen overflow-hidden">
 
-    @include('layouts.navadmin')
+        <div x-show="sidebarOpen" @click="sidebarOpen = false" x-cloak
+            x-transition:enter="transition-opacity ease-linear duration-300"
+            x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+            x-transition:leave="transition-opacity ease-linear duration-300" 
+            x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" 
+            class="fixed inset-0 z-20 bg-black bg-opacity-50 md:hidden"></div>
 
-    <div class="">
-        @yield(section: 'content')
+        @include('layouts.navadmin')
+
+        @yield('content')
+
     </div>
 
-    @include('layouts.footer')
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-    @yield('scripts')
 </body>
-
 </html>
