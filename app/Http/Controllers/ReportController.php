@@ -27,7 +27,7 @@ class ReportController extends Controller
         $data = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
-            'wa_number' => 'required|string|max:20',
+            'wa_number' => 'required|string|max:13',
             'category' => 'required', // Pastikan kolom ini ada di database
             'details' => 'required|string',
             'photo' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
