@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('location');
             $table->text('details');
             $table->string('photo_path')->nullable();
+            $table->string('status_report')->default('Menunggu Verifikasi');
 
             $table->string('status')->default('pending_verification');
             $table->string('otp_code')->nullable();

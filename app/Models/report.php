@@ -2,23 +2,70 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Prunable; // 1. Import Prunable untuk hapus otomatis
+use App\Enums\StatusLaporan;
 
 class Report extends Model
 {
-    use HasFactory;
+    use HasFactory, Prunable; // 2. Gunakan Trait Prunable
 
-    protected $fillable =[
+    protected $table = 'reports'; 
+
+    protected $fillable = [
         'name',
         'email',
         'wa_number',
         'category',
         'location',
         'details',
-        'photo_path',
-        'status',
+        'photo_path', 
+        'status', // Ini kolom status utama (enum)
+        'status_report', 
         'otp_code',
         'otp_expires_at',
     ];
+
+    protected $casts = [
+        'created_at' => 'datetime',
+        'otp_expires_at' => 'datetime',
+        'status_report' => StatusLaporan::class, // Pastikan casting ke Enum yang benar
+    ];
+
+    /**
+     * Fitur Pruning (Hapus Otomatis).
+     * Menghapus laporan yang statusnya 'ditolak' DAN sudah lebih dari 1 bulan (30 hari).
+     */
+    public function prunable()
+    {
+        return static::where('status', StatusLaporan::DITOLAK->value)
+                     ->where('created_at', '<=', now()->subMonth());
+    }
+
+    /**
+     * Accessor untuk mendapatkan Full URL Gambar
+     * Cara panggil di blade: $report->photo_url
+     */
+    public function getPhotoUrlAttribute()
+    {
+        // 1. Jika tidak ada foto, return null
+        if (empty($this->photo_path)) {
+            return null;
+        }
+
+        // 2. Jika di database ternyata sudah tersimpan link full, langsung return
+        if (str_starts_with($this->photo_path, 'http')) {
+            return $this->photo_path;
+        }
+
+        // 3. Masukkan Project Reference ID Supabase kamu
+        $projectRef = 'fzrxqmrrkeoprhmaxpgw'; 
+        
+        // Nama bucket kamu
+        $bucketName = 'photo_report';
+
+        // Return Format URL Public Supabase
+        return "https://{$projectRef}.supabase.co/storage/v1/object/public/{$bucketName}/{$this->photo_path}";
+    }
 }

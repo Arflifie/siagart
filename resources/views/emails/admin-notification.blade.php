@@ -11,6 +11,7 @@ Halo Admin/Pak RT, ada laporan baru yang telah **terverifikasi**.
 **Isi Laporan:**
 <x-mail::panel>
 **Kategori:** {{ $report->category }} <br>
+**Lokasi:** {{ $report->location }} <br>
 **Detail:** <br>
 {{ $report->details }}
 
