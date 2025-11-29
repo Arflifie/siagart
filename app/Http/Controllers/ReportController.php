@@ -29,6 +29,7 @@ class ReportController extends Controller
             'email' => 'required|email|max:255',
             'wa_number' => 'required|string|max:13',
             'category' => 'required', // Pastikan kolom ini ada di database
+            'location' => 'required',
             'details' => 'required|string',
             'photo' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);

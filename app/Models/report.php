@@ -14,6 +14,7 @@ class Report extends Model
         'email',
         'wa_number',
         'category',
+        'location',
         'details',
         'photo_path',
         'status',

@@ -13,37 +13,85 @@
                     </div>
                 @endif
 
-                <form action="{{ route('laporan.store') }}" method="POST" enctype="multipart/form-data"
-                    class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6" id="laporanForm">
-                    @csrf 
+                <form action="{{ route('laporan.store') }}" method="POST" enctype="multipart/form-data" class=""
+                    id="laporanForm">
+                    @csrf
 
-                    <div class="flex flex-col w-full">
-                        <label for="name" class="font-semibold text-gray-700 mb-1">Nama</label>
-                        <input type="text" id="name" name="name" placeholder="Masukkan nama Anda"
-                            value="{{ old('name') }}"
-                            class="px-5 py-3 rounded-lg border border-gray-300 mt-1
+                    <section class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex flex-col w-full">
+                            <label for="name" class="font-semibold text-gray-700 mb-1">Nama</label>
+                            <input type="text" id="name" name="name" placeholder="Masukkan nama Anda"
+                                value="{{ old('name') }}"
+                                class="px-5 py-3 rounded-lg border border-gray-300 mt-1
                                    focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 transition">
 
-                        @error('name')
-                            <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
-                        @enderror
-                    </div>
+                            @error('name')
+                                <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
+                            @enderror
+                        </div>
 
-                    <div class="flex flex-col w-full">
-                        <label for="email" class="font-semibold text-gray-700 mb-1">Email</label>
-                        <input type="text" id="email" name="email" placeholder="Masukkan email anda"
-                            value="{{ old('email') }}"
-                            class="px-5 py-3 rounded-lg border border-gray-300 mt-1
+                        <div class="flex flex-col w-full">
+                            <label for="email" class="font-semibold text-gray-700 mb-1">Email</label>
+                            <input type="text" id="email" name="email" placeholder="Masukkan email anda"
+                                value="{{ old('email') }}"
+                                class="px-5 py-3 rounded-lg border border-gray-300 mt-1
                                    focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 transition">
-                        @error('email')
-                            <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
-                        @enderror
-                    </div>
+                            @error('email')
+                                <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
+                            @enderror
+                        </div>
 
-                    <div class="flex flex-col w-full">
-                        <label for="wa_number" class="font-semibold text-gray-700 mb-1">Nomor WhatsApp</label>
-                        <input type="number" id="wa_number" name="wa_number" value="{{ old('wa_number') }}"
-                            placeholder="Masukkan nomor WhatsApp aktif"
+                        <div class="flex flex-col w-full">
+                            <label for="wa_number" class="font-semibold text-gray-700 mb-1">Nomor WhatsApp</label>
+                            <input type="number" id="wa_number" name="wa_number" value="{{ old('wa_number') }}"
+                                placeholder="Masukkan nomor WhatsApp aktif"
+                                class="px-5 py-3 rounded-lg border border-gray-300 mt-1
+                                   focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 transition">
+                            @error('wa_number')
+                                <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="flex flex-col w-full">
+                            <label for="category" class="font-semibold text-gray-700 mb-1">Kategori</label>
+                            <div class="relative w-full mt-1">
+                                <select name="category" id="category"
+                                    class="px-5 py-3 rounded-lg border border-gray-300 appearance-none bg-white
+                                       w-full 
+                                       focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 transition">
+                                    <option value="" disabled {{ old('category') ? '' : 'selected' }}>Pilih
+                                        kategori...
+                                    </option>
+                                    <option value="Pencurian" {{ old('category') == 'Pencurian' ? 'selected' : '' }}>
+                                        Pencurian
+                                    </option>
+                                    <option value="Kebakaran" {{ old('category') == 'Kebakaran' ? 'selected' : '' }}>
+                                        Kebakaran
+                                    </option>
+                                    <option value="Bencana Alam" {{ old('category') == 'Bencana Alam' ? 'selected' : '' }}>
+                                        Bencana Alam</option>
+                                    <option value="Lainnya" {{ old('category') == 'Lainnya' ? 'selected' : '' }}>Lainnya
+                                    </option>
+                                </select>
+                                {{-- <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
+                                <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div> --}}
+                            </div>
+                            @error('category')
+                                <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </section>
+
+
+                    <div class="flex flex-col w-full mt-6">
+                        <label for="location" class="font-semibold text-gray-700 mb-1">Lokasi</label>
+                        <input type="text" id="location" name="location" value="{{ old('location') }}"
+                            placeholder="Masukkan lokasi kejadian"
                             class="px-5 py-3 rounded-lg border border-gray-300 mt-1
                                    focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 transition">
                         @error('wa_number')
@@ -51,39 +99,7 @@
                         @enderror
                     </div>
 
-                    <div class="flex flex-col w-full">
-                        <label for="category" class="font-semibold text-gray-700 mb-1">Kategori</label>
-                        <div class="relative w-full mt-1">
-                            <select name="category" id="category"
-                                class="px-5 py-3 rounded-lg border border-gray-300 appearance-none bg-white
-                                       w-full 
-                                       focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 transition">
-                                <option value="" disabled {{ old('category') ? '' : 'selected' }}>Pilih kategori...
-                                </option>
-                                <option value="Pencurian" {{ old('category') == 'Pencurian' ? 'selected' : '' }}>Pencurian
-                                </option>
-                                <option value="Kebakaran" {{ old('category') == 'Kebakaran' ? 'selected' : '' }}>Kebakaran
-                                </option>
-                                <option value="Bencana Alam" {{ old('category') == 'Bencana Alam' ? 'selected' : '' }}>
-                                    Bencana Alam</option>
-                                <option value="Lainnya" {{ old('category') == 'Lainnya' ? 'selected' : '' }}>Lainnya
-                                </option>
-                            </select>
-                            {{-- <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
-                                <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </div> --}}
-                        </div>
-                        @error('category')
-                            <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
-                        @enderror
-                    </div>
-
-
-                    <div class="md:col-span-2 flex flex-col w-full" x-data="{ photoPreview: '', showModal: false, selectedImage: '' }">
+                    <div class="md:col-span-2 flex flex-col w-full mt-6" x-data="{ photoPreview: '', showModal: false, selectedImage: '' }">
                         <label for="photo" class="font-semibold text-gray-700 mb-1">Foto Kejadian</label>
                         <label for="photo" x-show="!photoPreview"
                             class="mt-1 flex justify-center w-full h-32 px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer hover:border-yellow-500 transition">
@@ -136,7 +152,7 @@
                         </template>
                     </div>
 
-                    <div class="md:col-span-2 flex flex-col w-full">
+                    <div class="md:col-span-2 flex flex-col w-full mt-6">
                         <label for="description" class="font-semibold text-gray-700 mb-1">Deskripsi</label>
                         <textarea name="details" id="details" rows="5" placeholder="Jelaskan kejadian secara rinci..."
                             class="px-5 py-3 rounded-lg border border-gray-300 mt-1

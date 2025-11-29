@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('wa_number');
             $table->string('category');
+            $table->string('location');
             $table->text('details');
             $table->string('photo_path')->nullable();
 
