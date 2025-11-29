@@ -10,7 +10,7 @@ use Illuminate\Validation\Rule;
 
 class LaporanController extends Controller
 {
-    // ... method index() biarkan tetap sama ...
+    // ... method index() tetap ...
     public function index()
     {
         $baseQuery = Report::where('status', '!=', 'pending_verification');
@@ -32,20 +32,21 @@ class LaporanController extends Controller
     }
 
     /**
-     * 2. History: Update dengan Fitur Search & Filter
+     * PERBAIKAN DI SINI:
+     * Tambahkan parameter Request $request untuk menangkap input filter
      */
     public function history(Request $request)
     {
         // 1. Query Dasar
         $query = Report::where('status', '!=', 'pending_verification');
 
-        // 2. Filter Pencarian (Nama, Deskripsi, atau ID)
+        // 2. Logika Pencarian (Search)
         if ($request->filled('search')) {
             $search = $request->search;
             $query->where(function($q) use ($search) {
-                $q->where('name', 'like', "%{$search}%")
-                  ->orWhere('details', 'like', "%{$search}%")
-                  ->orWhere('id', 'like', "%{$search}%");
+                $q->where('name', 'ilike', "%{$search}%") // Gunakan ilike untuk case-insensitive di Postgres
+                  ->orWhere('id', 'like', "%{$search}%")
+                  ->orWhere('details', 'ilike', "%{$search}%");
             });
         }
 
@@ -54,7 +55,7 @@ class LaporanController extends Controller
             $query->where('category', $request->category);
         }
 
-        // 4. Filter Tanggal (Start & End)
+        // 4. Filter Tanggal
         if ($request->filled('date_start')) {
             $query->whereDate('created_at', '>=', $request->date_start);
         }
@@ -62,18 +63,15 @@ class LaporanController extends Controller
             $query->whereDate('created_at', '<=', $request->date_end);
         }
 
-        // 5. Eksekusi Query dengan Pagination
-        // withQueryString() penting agar saat pindah halaman, filter tidak hilang
+        // 5. Eksekusi dengan Pagination & Simpan Query String
         $laporan = $query->orderBy('created_at', 'desc')
                          ->paginate(10)
-                         ->withQueryString(); 
+                         ->withQueryString(); // <--- Penting agar filter tidak hilang saat pindah halaman
 
-        // Opsi Kategori untuk Dropdown (Bisa hardcode di view atau ambil dari DB)
-        // Kita kirim data yang sudah ada saja
         return view('admin.history', compact('laporan'));
     }
 
-    // ... method show() dan updateStatus() biarkan tetap sama ...
+    // ... method show() dan updateStatus() tetap ...
     public function show(Report $report)
     {
         return view('admin.show', compact('report'));
@@ -93,7 +91,8 @@ class LaporanController extends Controller
         $report->save();
 
         if ($request->status == StatusLaporan::DITOLAK->value) {
-            return redirect()->route('admin.laporan.index')->with('success', 'Laporan telah ditolak.');
+            return redirect()->route('admin.laporan.history')
+                             ->with('success', 'Laporan telah ditolak.');
         }
 
         return back()->with('success', 'Status laporan berhasil diperbarui.');

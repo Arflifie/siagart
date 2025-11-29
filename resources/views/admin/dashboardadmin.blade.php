@@ -111,7 +111,9 @@
                             @endphp
 
                             <tr class="hover:bg-gray-50 transition-colors">
-                                <td class="px-6 py-4 font-mono text-xs text-gray-500">Laporan ke-{{ $item->id }}</td>
+                                <td class="px-6 py-4 text-gray-500 font-mono">
+                                    #LP-{{ $loop->iteration }}
+                                </td>
                                 <td class="px-6 py-4 font-medium">{{ $item->name }}</td>
                                 <td class="px-6 py-4">
                                     <span class="flex items-center gap-1">
