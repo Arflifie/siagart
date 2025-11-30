@@ -43,7 +43,7 @@
 
                         <div class="flex flex-col w-full">
                             <label for="wa_number" class="font-semibold text-gray-700 mb-1">Nomor WhatsApp</label>
-                            <input type="number" id="wa_number" name="wa_number" value="{{ old('wa_number') }}"
+                            <input type="number" id="wa_number" name="wa_number" value="{{ old('wa_number') }}" maxlength="13"
                                 placeholder="Masukkan nomor WhatsApp aktif"
                                 class="px-5 py-3 rounded-lg border border-gray-300 mt-1
                                    focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 transition">
