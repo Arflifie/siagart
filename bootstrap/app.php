@@ -12,22 +12,18 @@ $app = Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        // [WAJIB UNTUK VERCEL]
-        // Memberitahu Laravel untuk mempercayai load balancer Vercel.
-        // Jika ini tidak ada, aset (CSS/JS) akan dimuat via HTTP (bukan HTTPS) dan error "Mixed Content".
+        // [FIXED] Hapus trustHosts yang menyebabkan regex error.
+        // Cukup gunakan trustProxies agar HTTPS Vercel terbaca.
         $middleware->trustProxies(at: ['*']);
-        $middleware->trustHosts(at: ['*']);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
-    })->create(); // Kita panggil create() di sini dulu agar menjadi Object Application
+    })->create();
 
 // 2. Konfigurasi Storage Khusus Vercel
-// Vercel serverless bersifat Read-Only (tidak bisa tulis file), kecuali di folder /tmp
 if (isset($_ENV['VERCEL'])) {
-    // Arahkan storage path ke direktori sementara (/tmp)
     $app->useStoragePath('/tmp/storage');
 }
 
-// 3. Return instance aplikasi
+// 3. Return instance
 return $app;
