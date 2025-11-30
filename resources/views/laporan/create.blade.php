@@ -94,7 +94,7 @@
                             placeholder="Masukkan lokasi kejadian"
                             class="px-5 py-3 rounded-lg border border-gray-300 mt-1
                                    focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 transition">
-                        @error('wa_number')
+                        @error('location')
                             <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                         @enderror
                     </div>
