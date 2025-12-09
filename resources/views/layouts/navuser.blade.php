@@ -1,6 +1,6 @@
 <nav class="flex p-4 md:px-20 lg:px-40 items-center justify-between bg-yellow-500 sticky top-0 z-50 flex-wrap w-full shadow-lg">
     <div class="font-bold text-lg text-white flex items-center">
-        <img src="{{ asset('img/whitelogonotext.png') }}" alt="logo" width="30">
+        <img src="{{ asset('img/whitelogonotext.png') }}" alt="logo" width="20">
         <span class="ml-1">SiagaRT</span>
     </div>
 
