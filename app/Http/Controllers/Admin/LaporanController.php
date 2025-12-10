@@ -37,7 +37,6 @@ class LaporanController extends Controller
      */
     public function history(Request $request)
     {
-        // 1. Query Dasar
         $query = Report::where('status', '!=', 'pending_verification');
 
         // 2. Logika Pencarian (Search)

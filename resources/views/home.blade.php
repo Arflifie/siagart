@@ -22,7 +22,7 @@
             </div>
             <div class="mt-10 md:mt-0 flex justify-center md:justify-end" data-aos="fade-up" data-aos-delay="50"
                 data-aos-duration="500" data-aos-easing="ease-in-out">
-                <img src="{{ asset('img/Visual data.gif') }}" alt="visual data"
+                <img src="{{ asset('img/Visual data.gif') }}" alt="visual data" loading="lazy"
                     class="mx-auto md:mx-0 w-64 md:w-80 lg:w-[400px] h-auto object-contain">
             </div>
         </section>
@@ -36,25 +36,25 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 place-items-center max-w-5xl mx-auto">
                     <a href="tel:113" data-aos="fade-right"
                         class="flex flex-col md:flex-row items-center shadow-lg p-6 w-full max-w-md text-gray-600 font-bold rounded-xl hover:shadow-2xl transition bg-white">
-                        <img src="{{ asset('img/firefighter.svg') }}" alt="damkar" class="w-32 h-auto mx-auto md:mx-0">
+                        <img src="{{ asset('img/firefighter.svg') }}" alt="damkar" loading="lazy" class="w-32 h-auto mx-auto md:mx-0">
                         <span class="text-xl mt-4 md:mt-0 md:ml-6">Damkar</span>
                     </a>
 
                     <a href="tel:110" data-aos="fade-left"
                         class="flex flex-col md:flex-row items-center shadow-lg p-6 w-full max-w-md text-gray-600 font-bold rounded-xl hover:shadow-2xl transition bg-white">
-                        <img src="{{ asset('img/Police.svg') }}" alt="polisi" class="w-32 h-auto mx-auto md:mx-0">
+                        <img src="{{ asset('img/Police.svg') }}" alt="polisi" loading="lazy" class="w-32 h-auto mx-auto md:mx-0">
                         <span class="text-xl mt-4 md:mt-0 md:ml-6">Polisi</span>
                     </a>
 
                     <a href="tel:118" data-aos="fade-right"
                         class="flex flex-col md:flex-row items-center shadow-lg p-6 w-full max-w-md text-gray-600 font-bold rounded-xl hover:shadow-2xl transition bg-white">
-                        <img src="{{ asset('img/Ambulance.svg') }}" alt="ambulance" class="w-32 h-auto mx-auto md:mx-0">
+                        <img src="{{ asset('img/Ambulance.svg') }}" alt="ambulance" loading="lazy" class="w-32 h-auto mx-auto md:mx-0">
                         <span class="text-xl mt-4 md:mt-0 md:ml-6">Ambulans</span>
                     </a>
 
                     <a href="tel:115" data-aos="fade-left"
                         class="flex flex-col md:flex-row items-center shadow-lg p-6 w-full max-w-md text-gray-600 font-bold rounded-xl hover:shadow-2xl transition bg-white">
-                        <img src="{{ asset('img/sar.svg') }}" alt="basarnas" class="w-32 h-auto mx-auto md:mx-0">
+                        <img src="{{ asset('img/sar.svg') }}" alt="basarnas" loading="lazy" class="w-32 h-auto mx-auto md:mx-0">
                         <span class="text-xl mt-4 md:mt-0 md:ml-6">Basarnas</span>
                     </a>
                 </div>
@@ -71,7 +71,7 @@
                 </h2>
                 <div class="mt-8 text-center text-gray-500 place-items-center" data-aos="flip-right"
                     data-aos-duration="1000" data-aos-easing="ease-in-back" data-aos-offset="0">
-                    <img src="{{ asset('img/route_pelaporan.png') }}" alt="Alur Pelaporan" width="750">
+                    <img src="{{ asset('img/route_pelaporan.png') }}" alt="Alur Pelaporan" width="750" loading="lazy">
                 </div>
             </div>
         </section>
