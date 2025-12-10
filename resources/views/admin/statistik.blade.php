@@ -72,7 +72,7 @@
                 <div class="flex justify-between items-center mb-6">
                     <div>
                         <h3 class="font-bold text-slate-800">Tren Laporan Masuk</h3>
-                        <p class="text-xs text-gray-400">Jumlah laporan per hari dalam seminggu terakhir.</p>
+                        <p class="text-xs text-gray-400">Jumlah laporan per hari dalam sebulan terakhir.</p>
                     </div>
                     <!-- Indikator Naik/Turun Sederhana -->
                     @php
@@ -118,7 +118,6 @@
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
     <script>
-        // --- 1. CONFIG BAR CHART (KATEGORI) ---
         var kategoriLabels = {!! json_encode(array_keys($kategoriStats)) !!};
         var kategoriData = {!! json_encode(array_values($kategoriStats)) !!};
 
@@ -137,9 +136,9 @@
             },
             plotOptions: {
                 bar: {
-                    borderRadius: 6, // Bar membulat
+                    borderRadius: 6, 
                     columnWidth: '45%',
-                    distributed: true, // Warna beda tiap bar
+                    distributed: true, 
                 }
             },
             dataLabels: {
@@ -179,8 +178,6 @@
         new ApexCharts(document.querySelector("#chartKategori"), optionsKategori).render();
 
 
-        // --- 2. CONFIG DONUT CHART (STATUS) ---
-        // Data urutan: [Diterima, Ditolak, Menunggu]
         var statusSeries = [{{ $statusStats['diterima'] }}, {{ $statusStats['ditolak'] }}, {{ $statusStats['pending'] }}];
 
         var optionsStatus = {
@@ -191,7 +188,7 @@
                 height: 340,
                 fontFamily: 'Inter, sans-serif'
             },
-            colors: ['#10b981', '#ef4444', '#f59e0b'], // Hijau, Merah, Kuning
+            colors: ['#10b981', '#ef4444', '#f59e0b'], 
             plotOptions: {
                 pie: {
                     donut: {
@@ -245,7 +242,6 @@
         new ApexCharts(document.querySelector("#chartStatus"), optionsStatus).render();
 
 
-        // --- 3. CONFIG AREA CHART (TREN) ---
         var trenLabels = {!! json_encode($trenLabels) !!};
         var trenData = {!! json_encode($trenData) !!};
 
@@ -272,7 +268,7 @@
                 curve: 'smooth',
                 width: 3,
                 colors: ['#6366f1']
-            }, // Garis Indigo
+            }, 
             fill: {
                 type: 'gradient',
                 gradient: {
