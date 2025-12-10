@@ -5,6 +5,26 @@
 
 @section('content')
 
+    <!-- HEADER -->
+    <header class="flex h-16 items-center justify-between border-b bg-white px-6 shadow-sm flex-shrink-0 z-10 mb-5 rounded-xl">
+        <div class="flex items-center md:hidden">
+            <button @click="sidebarOpen = true" class="text-gray-500 focus:outline-none hover:text-slate-800">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <span class="ml-3 text-lg font-bold text-slate-800">SiagaRT</span>
+        </div>
+        <h2 class="hidden text-xl font-semibold text-slate-800 md:block">Overview RT 04</h2>
+        <div class="flex items-center gap-4">
+            <div class="text-right hidden md:block">
+                <div class="text-sm font-medium text-slate-900">{{ Auth::user()->name }}</div>
+            </div>
+            <img class="h-8 w-8 rounded-full border border-gray-200 object-cover"
+                src="https://ui-avatars.com/api/?name=Budi+Santoso&background=0F172A&color=fff" alt="User avatar">
+        </div>
+    </header>
+
     {{-- Wrapper Utama: flex-col h-full agar mengisi tinggi, w-full agar mengisi lebar --}}
     <div x-data="{ showFilters: {{ request()->anyFilled(['search', 'category', 'date_start', 'date_end']) ? 'true' : 'false' }} }" class="flex flex-col h-full w-full">
 

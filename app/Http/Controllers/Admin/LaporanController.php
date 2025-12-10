@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Report;
 use App\Enums\StatusLaporan;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class LaporanController extends Controller
 {
@@ -24,9 +25,8 @@ class LaporanController extends Controller
         ];
 
         $laporanTerbaru = (clone $baseQuery)
-                          ->orderBy('created_at', 'desc')
-                          ->take(5)
-                          ->get();
+                        ->orderBy('created_at', 'desc')
+                        ->paginate(5);
 
         return view('admin.dashboardadmin', compact('stats', 'laporanTerbaru'));
     }
@@ -96,5 +96,39 @@ class LaporanController extends Controller
         }
 
         return back()->with('success', 'Status laporan berhasil diperbarui.');
+    }
+
+    public function statistik(){
+        // A. DATA KATEGORI (Bar Chart)
+        // Hitung jumlah laporan per kategori
+        $kategoriStats = Report::select('category', DB::raw('count(*) as total'))
+            ->where('status', '!=', 'pending_verification') // Hanya yang sudah verif OTP
+            ->groupBy('category')
+            ->pluck('total', 'category')
+            ->toArray();
+
+        // B. DATA STATUS (Donut Chart - Evaluasi)
+        $statusStats = [
+            'diterima' => Report::whereIn('status_report', [StatusLaporan::PROSES, StatusLaporan::SELESAI])->count(),
+            'ditolak'  => Report::where('status_report', StatusLaporan::DITOLAK)->count(),
+            'pending'  => Report::where('status_report', StatusLaporan::MENUNGGU)->count(),
+        ];
+
+        // C. DATA TREN HARIAN (Line Chart - 7 Hari Terakhir)
+        $trenHarian = Report::select(
+                DB::raw('DATE(created_at) as date'), 
+                DB::raw('count(*) as total')
+            )
+            ->where('status', '!=', 'pending_verification')
+            ->where('created_at', '>=', now()->subDays(30))
+            ->groupBy('date')
+            ->orderBy('date', 'asc')
+            ->get();
+        
+        // Format data untuk Chart.js / ApexCharts
+        $trenLabels = $trenHarian->pluck('date')->map(fn($date) => date('d M', strtotime($date)))->toArray();
+        $trenData   = $trenHarian->pluck('total')->toArray();
+
+        return view('admin.statistik', compact('kategoriStats', 'statusStats', 'trenLabels', 'trenData'));
     }
 }

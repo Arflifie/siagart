@@ -34,6 +34,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     // Bisa langsung ditembak lewat URL: localhost:8000/admin/dashboard
     Route::get('/dashboard', [AdminLaporanController::class, 'index'])->name('dashboard');
     Route::get('/riwayat', [AdminLaporanController::class, 'history'])->name('laporan.history');
+    Route::get('/statistik', [AdminLaporanController::class, 'statistik'])->name('laporan.statistik');
     Route::get('/laporan/{report}', [AdminLaporanController::class, 'show'])->name('laporan.show');
     Route::post('/laporan/{report}/update-status', [AdminLaporanController::class, 'updateStatus'])->name('laporan.updateStatus');
 
