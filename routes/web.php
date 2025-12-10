@@ -20,16 +20,14 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
-// ==========================================
-// 🔓 ZONA ADMIN (MODE DEVELOPMENT)
-// TIDAK ADA MIDDLEWARE 'AUTH' DI SINI
-// ==========================================
-
+// User Route
 Route::get('/dashboard', function () {
     return redirect()->route('admin.dashboard');
 })->name('dashboard');
 
-Route::prefix('admin')->name('admin.')->group(function () {
+
+// Admin Route
+Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
     
     // Bisa langsung ditembak lewat URL: localhost:8000/admin/dashboard
     Route::get('/dashboard', [AdminLaporanController::class, 'index'])->name('dashboard');
