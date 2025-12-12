@@ -6,7 +6,7 @@
 
     <div class="hidden md:flex space-x-6">
         <div class="flex gap-10 list-none">
-            <a href="#home" class="text-white font-semibold no-underline text-lg hover:text-gray-500">Home</a>
+            <a href="#home" class="text-white font-semibold no-underline text-lg hover:text-gray-500 ">Home</a>
             <a href="#nomor_darurat" class="text-white font-semibold no-underline text-lg hover:text-gray-500">Nomor Darurat</a>
             <a href="#alur" class="text-white font-semibold no-underline text-lg hover:text-gray-500">Alur</a>
             <a href="#FAQ" class="text-white font-semibold no-underline text-lg hover:text-gray-500">FAQ</a>

@@ -33,6 +33,30 @@ class Report extends Model
         'status_report' => StatusLaporan::class, // Pastikan casting ke Enum yang benar
     ];
 
+    // Convert kode nomor negara
+    public function getWhatsappUrlAttribute()
+    {
+        // 1. Ambil nomor dari database
+        $number = $this->wa_number;
+
+        // 2. Hapus karakter selain angka (spasi, strip, plus, dll)
+        // Contoh: "+62 812-345" menjadi "62812345"
+        $number = preg_replace('/[^0-9]/', '', $number);
+
+        // 3. Cek apakah angka depannya '0' (format lokal)
+        // Jika ya, ganti '0' pertama dengan '62'
+        if (substr($number, 0, 1) === '0') {
+            $number = '62' . substr($number, 1);
+        }
+
+        // 4. (Opsional) Jika belum ada kode negara (misal user input 812...), tambahkan 62
+        if (substr($number, 0, 2) !== '62') {
+            $number = '62' . $number;
+        }
+
+        // 5. Return full link
+        return "https://wa.me/{$number}";
+    }
     /**
      * Fitur Pruning (Hapus Otomatis).
      * Menghapus laporan yang statusnya 'ditolak' DAN sudah lebih dari 1 bulan (30 hari).
