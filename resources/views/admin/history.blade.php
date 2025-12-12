@@ -215,7 +215,7 @@
 
             <!-- PAGINATION (Sticky Bottom) -->
             <div class="px-6 py-4 border-t border-gray-100 bg-white flex-shrink-0 w-full">
-                {{ $laporan->links() }}
+                {{ $laporan->links('vendor.pagination.siagart') }}
             </div>
         </div>
     </div>
