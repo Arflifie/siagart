@@ -63,7 +63,7 @@ class Report extends Model
      */
     public function prunable()
     {
-        return static::where('status', StatusLaporan::DITOLAK->value)
+        return static::where('status_report', StatusLaporan::DITOLAK->value)
                      ->where('created_at', '<=', now()->subMonth());
     }
 

@@ -2,16 +2,21 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Report;
 use App\Enums\StatusLaporan;
+use App\Mail\StatusLaporanMail;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Validation\Rule;
 
 class LaporanController extends Controller
 {
-    // ... method index() tetap ...
+    /**
+     * 1. Dashboard
+     */
     public function index()
     {
         $baseQuery = Report::where('status', '!=', 'pending_verification');
@@ -25,36 +30,36 @@ class LaporanController extends Controller
         ];
 
         $laporanTerbaru = (clone $baseQuery)
-                        ->orderBy('created_at', 'desc')
-                        ->paginate(5);
+                          ->orderBy('created_at', 'desc')
+                          ->paginate(5);
+                          
 
         return view('admin.dashboardadmin', compact('stats', 'laporanTerbaru'));
     }
 
     /**
-     * PERBAIKAN DI SINI:
-     * Tambahkan parameter Request $request untuk menangkap input filter
+     * 2. History Laporan (Search & Filter)
      */
     public function history(Request $request)
     {
         $query = Report::where('status', '!=', 'pending_verification');
 
-        // 2. Logika Pencarian (Search)
+        // Filter Search
         if ($request->filled('search')) {
             $search = $request->search;
             $query->where(function($q) use ($search) {
-                $q->where('name', 'ilike', "%{$search}%") // Gunakan ilike untuk case-insensitive di Postgres
+                $q->where('name', 'ilike', "%{$search}%")
                   ->orWhere('id', 'like', "%{$search}%")
                   ->orWhere('details', 'ilike', "%{$search}%");
             });
         }
 
-        // 3. Filter Kategori
+        // Filter Kategori
         if ($request->filled('category')) {
             $query->where('category', $request->category);
         }
 
-        // 4. Filter Tanggal
+        // Filter Tanggal
         if ($request->filled('date_start')) {
             $query->whereDate('created_at', '>=', $request->date_start);
         }
@@ -62,20 +67,25 @@ class LaporanController extends Controller
             $query->whereDate('created_at', '<=', $request->date_end);
         }
 
-        // 5. Eksekusi dengan Pagination & Simpan Query String
         $laporan = $query->orderBy('created_at', 'desc')
                          ->paginate(10)
-                         ->withQueryString(); // <--- Penting agar filter tidak hilang saat pindah halaman
+                         ->withQueryString(); 
 
         return view('admin.history', compact('laporan'));
     }
 
-    // ... method show() dan updateStatus() tetap ...
+    /**
+     * 3. Show Detail
+     */
     public function show(Report $report)
     {
         return view('admin.show', compact('report'));
     }
 
+    /**
+     * 4. Update Status (Verifikasi / Tolak)
+     * Method ini menangani perubahan status dan pengiriman email.
+     */
     public function updateStatus(Request $request, Report $report)
     {
         $request->validate([
@@ -86,9 +96,21 @@ class LaporanController extends Controller
             ])]
         ]);
 
+        // Simpan status baru
         $report->status_report = $request->status;
         $report->save();
 
+        // Kirim Email Notifikasi ke Pelapor
+        try {
+            if ($report->email) {
+                Mail::to($report->email)->send(new StatusLaporanMail($report));
+                Log::info("Email status terkirim ke: " . $report->email);
+            }
+        } catch (\Exception $e) {
+            Log::error('Gagal kirim email status: ' . $e->getMessage());
+        }
+
+        // Redirect khusus jika ditolak
         if ($request->status == StatusLaporan::DITOLAK->value) {
             return redirect()->route('admin.laporan.history')
                              ->with('success', 'Laporan telah ditolak.');
@@ -97,34 +119,33 @@ class LaporanController extends Controller
         return back()->with('success', 'Status laporan berhasil diperbarui.');
     }
 
-    public function statistik(){
-        // A. DATA KATEGORI (Bar Chart)
-        // Hitung jumlah laporan per kategori
+    /**
+     * 5. Statistik
+     */
+    public function statistik()
+    {
         $kategoriStats = Report::select('category', DB::raw('count(*) as total'))
-            ->where('status', '!=', 'pending_verification') // Hanya yang sudah verif OTP
+            ->where('status', '!=', 'pending_verification')
             ->groupBy('category')
             ->pluck('total', 'category')
             ->toArray();
 
-        // B. DATA STATUS (Donut Chart - Evaluasi)
         $statusStats = [
             'diterima' => Report::whereIn('status_report', [StatusLaporan::PROSES, StatusLaporan::SELESAI])->count(),
             'ditolak'  => Report::where('status_report', StatusLaporan::DITOLAK)->count(),
             'pending'  => Report::where('status_report', StatusLaporan::MENUNGGU)->count(),
         ];
 
-        // C. DATA TREN HARIAN (Line Chart - 7 Hari Terakhir)
         $trenHarian = Report::select(
                 DB::raw('DATE(created_at) as date'), 
                 DB::raw('count(*) as total')
             )
             ->where('status', '!=', 'pending_verification')
-            ->where('created_at', '>=', now()->subDays(30))
+            ->where('created_at', '>=', now()->subDays(7))
             ->groupBy('date')
             ->orderBy('date', 'asc')
             ->get();
         
-        // Format data untuk Chart.js / ApexCharts
         $trenLabels = $trenHarian->pluck('date')->map(fn($date) => date('d M', strtotime($date)))->toArray();
         $trenData   = $trenHarian->pluck('total')->toArray();
 
