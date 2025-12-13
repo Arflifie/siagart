@@ -11,6 +11,12 @@
             Silakan login untuk melanjutkan
         </p>
 
+        @if (session('success'))
+            <div class="mt-6 p-4 bg-green-100 text-green-700 border border-green-300 rounded-lg">
+                {{ session('success') }}
+            </div>
+        @endif
+
         {{-- Form Login --}}
         <form method="POST" action="{{ route('login') }}" class="space-y-5">
             @csrf
@@ -31,7 +37,7 @@
             <div class="relative">
                 <label class="text-gray-600 font-semibold">Password</label>
 
-                <input type="password" id="password" name="password" value="{{old('password')}}"
+                <input type="password" id="password" name="password" value="{{ old('password') }}"
                     class="w-full mt-2 px-4 py-3 pr-12 rounded-xl border border-gray-300 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
                     required>
                 @error('password')
