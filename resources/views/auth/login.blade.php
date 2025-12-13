@@ -18,11 +18,11 @@
             {{-- Email --}}
             <div>
                 <label class="text-gray-600 font-semibold">Email</label>
-                <input type="email" name="email"
+                <input type="email" name="email" id="email" value="{{ old('email') }}"
                     class="w-full mt-2 px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
                     required autofocus>
                 @error('email')
-                    <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
+                    <span class="text-red-500 text-sm mt-1 block">{{ $message }}</span>
                 @enderror
             </div>
 
@@ -31,11 +31,11 @@
             <div class="relative">
                 <label class="text-gray-600 font-semibold">Password</label>
 
-                <input type="password" id="password" name="password"
+                <input type="password" id="password" name="password" value="{{old('password')}}"
                     class="w-full mt-2 px-4 py-3 pr-12 rounded-xl border border-gray-300 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
                     required>
                 @error('password')
-                    <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
+                    <span class="text-red-500 text-sm mt-1 block">{{ $message }}</span>
                 @enderror
 
                 {{-- Icon Show/Hide --}}
