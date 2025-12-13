@@ -28,9 +28,8 @@
         class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-yellow-600 transition-opacity duration-500">
         <!-- Logo Text -->
         <div class="mb-6 flex items-center gap-2 text-white">
-            <lottie-player src="{{ asset('loadingLogo.json') }}" background="transparent" speed="2"
-                style="width: 300px; height: 300px;" loop autoplay>>
-            </lottie-player>
+            <dotlottie-wc src="https://lottie.host/bdad4a2c-5710-4bf9-ae2f-bde1e2ab6f45/uHapQ5Kq5n.lottie"
+                style="width: 300px;height: 300px" autoplay loop></dotlottie-wc>
         </div>
 
     </div>
@@ -58,6 +57,7 @@
     </div>
 
     <!-- SCRIPT GLOBAL UNTUK FLASH MESSAGE -->
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module"></script>
     <script>
         window.addEventListener('load', function() {
             const preloader = document.getElementById('preloader');

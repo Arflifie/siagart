@@ -24,19 +24,87 @@
     {{-- AOS --}}
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+
+        /* CSS tambahan untuk animasi loader jika diperlukan */
+        .loader-dots div {
+            animation-timing-function: cubic-bezier(0, 1, 1, 0);
+        }
+
+        .loader-dots div:nth-child(1) {
+            left: 8px;
+            animation: loader-dots1 0.6s infinite;
+        }
+
+        .loader-dots div:nth-child(2) {
+            left: 8px;
+            animation: loader-dots2 0.6s infinite;
+        }
+
+        .loader-dots div:nth-child(3) {
+            left: 32px;
+            animation: loader-dots2 0.6s infinite;
+        }
+
+        .loader-dots div:nth-child(4) {
+            left: 56px;
+            animation: loader-dots3 0.6s infinite;
+        }
+
+        @keyframes loader-dots1 {
+            0% {
+                transform: scale(0);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes loader-dots3 {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(0);
+            }
+        }
+
+        @keyframes loader-dots2 {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(24px, 0);
+            }
+        }
+    </style>
 </head>
 
 <body class="">
 
     <!-- PRELOADER -->
     <div id="preloader"
-        class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-yellow-600 transition-opacity duration-500">
+        class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-yellow-500 transition-opacity duration-500">
         <!-- Logo Text -->
-        <div class="mb-6 flex items-center gap-2 text-white">
-            <lottie-player src="{{asset('loadingLogo.json')}}" background="transparent" speed="2"
-                style="width: 300px; height: 300px;" loop autoplay>>
-            </lottie-player>
+        {{-- <div class="mb-6 flex items-center gap-2 text-white">
+            <img src="{{ asset('Loading Files.gif') }}" alt="intro" width="200">
+        </div> --}}
+
+        <!-- Loading Animation (Dots) -->
+        <div class="loader-dots relative block w-20 h-5">
+            <div class="absolute top-0 mt-1 w-3 h-3 rounded-full bg-white"></div>
+            <div class="absolute top-0 mt-1 w-3 h-3 rounded-full bg-white"></div>
+            <div class="absolute top-0 mt-1 w-3 h-3 rounded-full bg-white"></div>
+            <div class="absolute top-0 mt-1 w-3 h-3 rounded-full bg-white"></div>
         </div>
+
+        <p class="mt-4 text-xs font-medium text-white animate-pulse">Memuat Data...</p>
     </div>
 
     @include('layouts.navuser')
@@ -47,7 +115,6 @@
 
     @include('layouts.footer')
 
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
