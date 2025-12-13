@@ -20,7 +20,7 @@
                     <div class="text-sm font-medium text-slate-900">{{ Auth::user()->name }}</div>
                 </div>
                 <img class="h-8 w-8 rounded-full border border-gray-200 object-cover"
-                    src="https://ui-avatars.com/api/?name=Budi+Santoso&background=0F172A&color=fff" alt="User avatar">
+                    src="{{asset('img/admin.png')}}" alt="User avatar">
             </div>
         </header>
 
