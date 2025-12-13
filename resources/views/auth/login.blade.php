@@ -21,7 +21,11 @@
                 <input type="email" name="email"
                     class="w-full mt-2 px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
                     required autofocus>
+                @error('email')
+                    <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
+                @enderror
             </div>
+
 
             {{-- Password --}}
             <div class="relative">
@@ -30,10 +34,12 @@
                 <input type="password" id="password" name="password"
                     class="w-full mt-2 px-4 py-3 pr-12 rounded-xl border border-gray-300 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
                     required>
+                @error('password')
+                    <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
+                @enderror
 
                 {{-- Icon Show/Hide --}}
-                <span onclick="togglePassword()"
-                    class="absolute right-4 top-8 mt-3 cursor-pointer text-gray-600">
+                <span onclick="togglePassword()" class="absolute right-4 top-8 mt-3 cursor-pointer text-gray-600">
                     <i id="eyeIcon" class="fa-solid fa-eye"></i>
                 </span>
             </div>
