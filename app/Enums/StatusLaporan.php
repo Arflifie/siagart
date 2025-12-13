@@ -8,14 +8,11 @@ enum StatusLaporan: string
     
     
     // Status admin
-    case MENUNGGU = 'Menunggu Verifikasi';
-    case PROSES = 'Sedang Diproses';
-    case SELESAI = 'Selesai';
-    case DITOLAK = 'Ditolak';
-    
-    // TAMBAHKAN INI (Penyebab Error)
-    // Sesuaikan string 'terverifikasi' persis dengan yang ada di error/database
-    case TERVERIFIKASI = 'terverifikasi'; 
+    case MENUNGGU      = 'menunggu';
+    case PROSES        = 'proses';
+    case SELESAI       = 'selesai';
+    case DITOLAK       = 'ditolak';
+    case TERVERIFIKASI = 'terverifikasi';
 
     public function label(): string
     {
