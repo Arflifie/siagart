@@ -29,10 +29,10 @@ class LaporanController extends Controller
             'total_warga' => 340, 
         ];
 
+        // PERBAIKAN: Gunakan paginate() agar method links() di view tidak error
         $laporanTerbaru = (clone $baseQuery)
                           ->orderBy('created_at', 'desc')
-                          ->paginate(5);
-                          
+                          ->paginate(5); 
 
         return view('admin.dashboardadmin', compact('stats', 'laporanTerbaru'));
     }
@@ -84,7 +84,6 @@ class LaporanController extends Controller
 
     /**
      * 4. Update Status (Verifikasi / Tolak)
-     * Method ini menangani perubahan status dan pengiriman email.
      */
     public function updateStatus(Request $request, Report $report)
     {
@@ -101,13 +100,15 @@ class LaporanController extends Controller
         $report->save();
 
         // Kirim Email Notifikasi ke Pelapor
+        // PERBAIKAN: Gunakan \Throwable agar error fatal (Type Error) tidak bikin 500
         try {
             if ($report->email) {
                 Mail::to($report->email)->send(new StatusLaporanMail($report));
                 Log::info("Email status terkirim ke: " . $report->email);
             }
-        } catch (\Exception $e) {
-            Log::error('Gagal kirim email status(error ditangani, update status tetap berhasil): ' . $e->getMessage());
+        } catch (\Throwable $e) {
+            // Throwable menangkap Error DAN Exception
+            Log::error('Gagal kirim email status (Error ditangani, update status tetap berhasil): ' . $e->getMessage());
         }
 
         // Redirect khusus jika ditolak
