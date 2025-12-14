@@ -104,11 +104,11 @@ class LaporanController extends Controller
         try {
             if ($report->email) {
                 Mail::to($report->email)->send(new StatusLaporanMail($report));
-                Log::info("Email status terkirim ke: " . $report->email);
+                error_log("Email status terkirim ke: " . $report->email);
             }
         } catch (\Throwable $e) {
             // Throwable menangkap Error DAN Exception
-            Log::error('Gagal kirim email status (Error ditangani, update status tetap berhasil): ' . $e->getMessage());
+            error_log('Gagal kirim email status: ' . $e->getMessage());
         }
 
         // Redirect khusus jika ditolak

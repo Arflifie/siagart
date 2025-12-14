@@ -21,7 +21,7 @@ class StatusLaporanMail extends Mailable
         $this->report = $report;
     }
 
-    public function envelope(): envelope
+    public function envelope(): Envelope
     {
         return new Envelope(
             subject: 'Update Status Laporan #' . $this->report->id . ' - SiagaRT',
