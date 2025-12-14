@@ -35,6 +35,5 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::get('/statistik', [AdminLaporanController::class, 'statistik'])->name('laporan.statistik');
     Route::get('/laporan/{report}', [AdminLaporanController::class, 'show'])->name('laporan.show');
     Route::post('/laporan/{report}/update-status', [AdminLaporanController::class, 'updateStatus'])->name('laporan.updateStatus');
-    Route::post('/laporan/{report}/update-status', [AdminLaporanController::class, 'updateStatusUser'])->name('laporan.updateStatus');
 
 });
