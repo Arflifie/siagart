@@ -21,9 +21,9 @@
 * **Pelaporan Cepat:** Form pelaporan darurat yang simpel dan responsif.
 * **Kategori Kejadian:** Klasifikasi jenis laporan (Kebakaran, Bencana, Kriminalitas, Medis).
 * **Bukti Laporan:** Dukungan upload foto kejadian di lokasi.
-* **Dashboard Admin:** Panel khusus untuk Ketua RT/Keamanan memantau laporan masuk.
-* **Status Tracking:** Warga dapat melihat status laporan (Terkirim, Sedang Ditangani, Selesai).
-* **Autentikasi Warga:** Login aman untuk memastikan pelapor adalah warga terverifikasi.
+* **Dashboard Admin:** Panel khusus untuk Ketua RT/Pengurus RT memantau laporan masuk.
+* **Status Tracking:** Warga dapat menerima status laporan (Terkirim, Sedang Ditangani, Selesai).
+* **Autentikasi Warga:** Laporan menggunakan kode OTP verifikasi sebelum dikirim ke pengurus.
 
 ## 🛠 Teknologi yang Digunakan
 
@@ -112,3 +112,11 @@ Project **SiagaRT** ini dikembangkan dan dipelihara oleh tim yang berdedikasi un
 | ![Arfun Ali Yafie](https://github.com/Arflifie.png) | **Arfun Ali Yafie**<br>*(Ketua Tim)* | **Fullstack Developer** | • Manajemen Proyek<br>• Backend Logic<br>• Integrasi Database |
 | ![Fitri Agustina](https://github.com/agtfie.png) | **Fitri Agustina**<br>*(Anggota)* | **Frontend Engineer** | • Slicing UI<br>• Responsivitas<br>• Desain Antarmuka |
 | ![Desti Amanda](https://github.com/destiamanda.png) | **Desti Amanda**<br>*(Anggota)* | **System Analyst** | • Perancangan Flow<br>• Testing Aplikasi<br>• Dokumentasi |
+
+## 📄 Lisensi
+
+**SiagaRT** adalah software open-source yang dilisensikan di bawah [MIT License](https://opensource.org/licenses/MIT).
+
+Anda diizinkan untuk memodifikasi, mendistribusikan, dan menggunakan kode ini untuk keperluan pribadi maupun komersial, selama mencantumkan hak cipta penulis asli.
+
+Copyright © 2025 Tim Pengembang SiagaRT RT 04.
