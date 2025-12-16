@@ -102,3 +102,15 @@ DB_PORT=5432 (Atau 6543 untuk Transaction Mode)
 DB_DATABASE=postgres
 DB_USERNAME=postgres.namaappkalian
 DB_PASSWORD=password-database-kalian
+
+## 👥 Tim Pengembang
+
+Project **SiagaRT** ini dikembangkan dan dipelihara oleh tim yang berdedikasi untuk memberikan solusi digital bagi warga RT 04.
+
+| Foto | Nama & Identitas | Peran (Role) | Tanggung Jawab Utama |
+| :---: | :--- | :--- | :--- |
+| <img src="https://github.com/Arflifie.png" width="40" height="40"> | **Arfun Ali Yafie**<br>*(Ketua Tim)*<br>NIM: `F1E123070` | **Fullstack Developer** | • Manajemen Proyek<br>• Backend Logic (Laravel)<br>• Integrasi Database Supabase |
+| <img src="https://github.com/agtfie.png" width="40" height="40"> | **Fitri Agustina**<br>*(Anggota)*<br>NIM: `xxxxxxxx` | **Frontend Engineer** | • Slicing UI dengan Tailwind<br>• Responsivitas Layout<br>• Desain Antarmuka |
+| <img src="https://github.com/destiamanda.png" width="40" height="40"> | **Desti Amanda**<br>*(Anggota)*<br>NIM: `xxxxxxxx` | **System Analyst / QA** | • Perancangan Flow Sistem<br>• Testing Aplikasi<br>• Dokumentasi & Laporan |
+
+> **Catatan:** Klik nama atau foto untuk mengunjungi profil GitHub pengembang.
