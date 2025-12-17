@@ -163,9 +163,9 @@
                     </table>
                 </div>
 
-                <div class="px-6 py-4 border-t border-gray-100">
+                {{-- <div class="px-6 py-4 border-t border-gray-100">
                     {{ $laporanTerbaru->links('vendor.pagination.siagart') }}
-                </div>
+                </div> --}}
             </div>
         </main>
     </div>
