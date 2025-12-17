@@ -34,10 +34,10 @@ class WhatsAppChannel
         }
 
         // 4. Ambil Token dari .env (LEBIH AMAN)
-        $token = env('FONNTE_TOKEN'); 
+        $token = config('services.fonnte.token');
 
         if (empty($token)) {
-            Log::error('Notifikasi WA gagal: FONNTE_TOKEN belum diset di file .env');
+            Log::error('Gagal kirim WA: Token Fonnte tidak terbaca di Config.');
             return;
         }
 
