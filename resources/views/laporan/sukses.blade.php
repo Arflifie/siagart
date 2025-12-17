@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.layoutsuccess')
 
 @section('content')
 <div class="bg-gray-100 min-h-screen py-12 md:py-16">
