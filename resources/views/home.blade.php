@@ -2,7 +2,7 @@
 @section('content')
     <main class="overflow-x-hidden">
 
-        {{-- Section 1: Hero (Salam Pembuka) --}}
+        {{-- Section 1: Hero (Salam buka) --}}
         <section id="home"
             class="min-h-[90vh] py-16 px-6 mx-auto md:grid md:grid-cols-2 md:items-center md:text-left md:gap-16 text-center p-4 md:px-20 lg:px-40">
 
