@@ -4,7 +4,7 @@
 
 ![Project Status](https://img.shields.io/badge/status-development-orange)
 ![Laravel](https://img.shields.io/badge/Laravel-12.x-red)
-![Tailwind](https://img.shields.io/badge/Tailwind_CSS-3.0-blue)
+![Tailwind](https://img.shields.io/badge/Tailwind_CSS-4.0-blue)
 ![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-green)
 
 ## 📋 Daftar Isi
