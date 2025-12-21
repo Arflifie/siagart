@@ -3,7 +3,7 @@
 **SiagaRT** adalah platform berbasis web yang dirancang khusus untuk warga **RT 04 Kenali Besar**. Aplikasi ini berfungsi sebagai jembatan komunikasi cepat antara warga dan perangkat RT/Keamanan saat terjadi situasi darurat seperti kebakaran, bencana alam, pencurian, atau kebutuhan medis mendesak.
 
 ![Project Status](https://img.shields.io/badge/status-development-orange)
-![Laravel](https://img.shields.io/badge/Laravel-10.x-red)
+![Laravel](https://img.shields.io/badge/Laravel-12.x-red)
 ![Tailwind](https://img.shields.io/badge/Tailwind_CSS-3.0-blue)
 ![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-green)
 
