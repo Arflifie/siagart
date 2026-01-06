@@ -46,6 +46,7 @@
                         <span class="text-xl mt-4 md:mt-0 md:ml-6">Polisi</span>
                     </a>
 
+
                     <a href="tel:118" data-aos="fade-right"
                         class="flex flex-col md:flex-row items-center shadow-lg p-6 w-full max-w-md text-gray-600 font-bold rounded-xl hover:shadow-2xl transition bg-white">
                         <img src="{{ asset('img/Ambulance.svg') }}" alt="ambulance" loading="lazy" class="w-32 h-auto mx-auto md:mx-0">
